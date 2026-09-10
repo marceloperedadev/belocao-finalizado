@@ -2,16 +2,26 @@
 
 import {
   ArrowRight,
-  Scissors,
   Bath,
-  Heart,
-  Sparkles,
   Coffee,
+  Heart,
+  Scissors,
   ShoppingBag,
+  Sparkles,
 } from 'lucide-react'
 
 import { Config } from '@/app/constants/config'
-import styles from './Specialties.module.css'
+import styles  from './Specialties.module.css'
+
+/* =========================================================
+   BELO CÃO
+
+   SPECIALTIES
+   SERVIÇOS · EXPERIÊNCIAS · LOJINHA
+
+   ROXO + BRANCO
+   EDITORIAL · VIVO · DISCRETO
+   ========================================================= */
 
 const SPECIALTIES_DATA = [
   {
@@ -59,9 +69,20 @@ const SPECIALTIES_DATA = [
 ]
 
 export function Specialties() {
-  const getWhatsappLink = (title: string) => {
-    const baseUrl = Config.WHATSAPP_URL
+  /* =======================================================
+     LINK WHATSAPP
+     ======================================================= */
 
+  const getWhatsappLink = (
+    title: string,
+  ) => {
+    const baseUrl =
+      Config.WHATSAPP_URL
+
+    /*
+     * Se o WhatsApp não estiver configurado,
+     * mantém o usuário dentro da página.
+     */
     if (!baseUrl) {
       return '#contato'
     }
@@ -69,9 +90,18 @@ export function Specialties() {
     const message =
       `Olá! Gostaria de saber mais sobre ${title} no Belo Cão.`
 
-    const separator = baseUrl.includes('?') ? '&' : '?'
+    /*
+     * Mantém compatibilidade caso a URL já possua
+     * parâmetros de consulta.
+     */
+    const separator =
+      baseUrl.includes('?')
+        ? '&'
+        : '?'
 
-    return `${baseUrl}${separator}text=${encodeURIComponent(message)}`
+    return `${baseUrl}${separator}text=${encodeURIComponent(
+      message,
+    )}`
   }
 
   return (
@@ -83,81 +113,133 @@ export function Specialties() {
           INTRODUÇÃO
           ================================================= */}
 
-      <div className={styles.sectionIntro}>
+      <div
+        className={
+          styles.sectionIntro
+        }
+      >
+        <div
+          className={
+            styles.dentalEyebrow
+          }
+        >
+          <span
+            aria-hidden="true"
+          />
 
-        <div className={styles.dentalEyebrow}>
-          <span aria-hidden="true" />
-          O QUE TEM POR AQUI
+          <span>
+            O QUE TEM POR AQUI
+          </span>
         </div>
 
         <h2>
           Cuidado para eles.
           <br />
-          <em>Tempo para você.</em>
+          <em>
+            Tempo para você.
+          </em>
         </h2>
 
         <p>
-          Do banho ao café, cada parte do Belo Cão foi
-          pensada para deixar o momento mais gostoso.
+          Do banho ao café, cada parte
+          do Belo Cão foi pensada para
+          deixar o momento mais gostoso.
         </p>
-
       </div>
-
 
       {/* =================================================
           GRID
           ================================================= */}
 
-      <div className={styles.specialtyGrid}>
+      <div
+        className={
+          styles.specialtyGrid
+        }
+      >
+        {SPECIALTIES_DATA.map(
+          (item) => {
+            const Icon =
+              item.icon
 
-        {SPECIALTIES_DATA.map((item) => {
-          const Icon = item.icon
-          const customLink = getWhatsappLink(item.title)
+            const customLink =
+              getWhatsappLink(
+                item.title,
+              )
 
-          return (
-            <article key={item.number}>
-
-              <span className={styles.specialtyNumber}>
-                {item.number}
-              </span>
-
-              <div className={styles.icon}>
-                <Icon
-                  size={21}
-                  strokeWidth={1.9}
-                  aria-hidden="true"
-                />
-              </div>
-
-              <h3>
-                {item.title}
-              </h3>
-
-              <p>
-                {item.description}
-              </p>
-
-              <a
-                href={customLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Saber mais sobre ${item.title}`}
+            return (
+              <article
+                key={item.number}
               >
-                saber mais
+                {/* =========================================
+                    NÚMERO
+                    ========================================= */}
 
-                <ArrowRight
-                  size={14}
-                  strokeWidth={2}
+                <span
+                  className={
+                    styles.specialtyNumber
+                  }
                   aria-hidden="true"
-                />
-              </a>
+                >
+                  {item.number}
+                </span>
 
-            </article>
-          )
-        })}
+                {/* =========================================
+                    ÍCONE
+                    ========================================= */}
 
+                <div
+                  className={
+                    styles.icon
+                  }
+                  aria-hidden="true"
+                >
+                  <Icon
+                    size={21}
+                    strokeWidth={1.9}
+                  />
+                </div>
+
+                {/* =========================================
+                    TÍTULO
+                    ========================================= */}
+
+                <h3>
+                  {item.title}
+                </h3>
+
+                {/* =========================================
+                    DESCRIÇÃO
+                    ========================================= */}
+
+                <p>
+                  {item.description}
+                </p>
+
+                {/* =========================================
+                    AÇÃO
+                    ========================================= */}
+
+                <a
+                  href={customLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Saber mais sobre ${item.title}`}
+                >
+                  <span>
+                    saber mais
+                  </span>
+
+                  <ArrowRight
+                    size={14}
+                    strokeWidth={2}
+                    aria-hidden="true"
+                  />
+                </a>
+              </article>
+            )
+          },
+        )}
       </div>
-
     </section>
   )
 }

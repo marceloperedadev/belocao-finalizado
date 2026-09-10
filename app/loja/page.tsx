@@ -1504,7 +1504,13 @@ export default function LojaPage() {
         aberto={
           checkoutAberto
         }
-        itens={carrinho}
+        itens={carrinho.map(
+          (item) => ({
+            ...item,
+            price:
+              Number(item.price) || 0,
+          }),
+        )}
         onFechar={() =>
           setCheckoutAberto(
             false,

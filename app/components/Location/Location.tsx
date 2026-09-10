@@ -1,4 +1,3 @@
-
 'use client'
 
 import {
@@ -161,7 +160,7 @@ export function Location() {
             </div>
 
             <a
-              href={Config.WHATSAPP_URL}
+              href={Config.WHATSAPP_URL || '#contato'}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.locationCta}
@@ -206,13 +205,29 @@ export function Location() {
 
             <div className={styles.mapFrame}>
 
-              <iframe
-                src={Config.GOOGLE_MAPS_EMBED_URL}
-                title="Localização do Belo Cão"
-                loading="lazy"
-                allowFullScreen
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+              {Config.GOOGLE_MAPS_EMBED_URL ? (
+                <iframe
+                  src={Config.GOOGLE_MAPS_EMBED_URL}
+                  title="Localização do Belo Cão"
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              ) : (
+                <div
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <span>
+                    Mapa indisponível
+                  </span>
+                </div>
+              )}
 
               <div className={styles.mapBadge}>
                 <MapPin
@@ -243,4 +258,3 @@ export function Location() {
     </section>
   )
 }
-

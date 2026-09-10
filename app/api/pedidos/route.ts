@@ -1,4 +1,3 @@
-
 import { NextResponse } from 'next/server'
 import { Pool } from '@neondatabase/serverless'
 
@@ -590,12 +589,8 @@ export async function POST(
     // =====================================================
 
     const freteInformado =
-      body.frete !==
-        null &&
-      body.frete !==
-        undefined &&
-      body.frete !==
-        ''
+      body.frete !== null &&
+      body.frete !== undefined
 
     let frete = 0
 
@@ -661,12 +656,8 @@ export async function POST(
       'dinheiro'
     ) {
       if (
-        body.trocoPara !==
-          null &&
-        body.trocoPara !==
-          undefined &&
-        body.trocoPara !==
-          ''
+        body.trocoPara !== null &&
+        body.trocoPara !== undefined
       ) {
         trocoPara =
           numeroSeguro(

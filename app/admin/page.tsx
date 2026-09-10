@@ -27,7 +27,9 @@ import styles from './Admin.module.css'
 
 /* =========================================================
    BELO CÃO
+
    ADMIN — DASHBOARD
+
    PREMIUM · CLEAN · EMPRESARIAL
    ROXO + BRANCO
    ========================================================= */
@@ -52,19 +54,14 @@ type ResolucaoEstoque =
 type Pedido = {
   id: string
   numeroPedido: string
-
   status: StatusPedido
-
   cliente: {
     nome: string
     telefone: string
   }
-
   total: number
   criadoEm: string
-
   precisaAtencao: boolean
-
   resolucaoEstoque: ResolucaoEstoque
 }
 
@@ -106,10 +103,8 @@ type DashboardApi = {
 
 type PedidosApi = {
   sucesso?: boolean
-
   pedidos?: unknown[]
   data?: unknown[]
-
   totalPedidos?: number
   valorTotal?: number
 
@@ -144,9 +139,7 @@ function texto(valor: unknown): string {
  * A versão anterior entrou em conflito com uma variável
  * usada na normalização do pedido.
  */
-function converterNumero(
-  valor: unknown,
-): number {
+function converterNumero(valor: unknown): number {
   if (typeof valor === 'number') {
     return Number.isFinite(valor)
       ? valor
@@ -154,19 +147,15 @@ function converterNumero(
   }
 
   if (typeof valor === 'string') {
-    const valorLimpo =
-      valor
-        .replace(/R\$/gi, '')
-        .replace(/\s/g, '')
-        .replace(/\./g, '')
-        .replace(',', '.')
+    const valorLimpo = valor
+      .replace(/R\$/gi, '')
+      .replace(/\s/g, '')
+      .replace(/\./g, '')
+      .replace(',', '.')
 
-    const resultado =
-      Number(valorLimpo)
+    const resultado = Number(valorLimpo)
 
-    return Number.isFinite(
-      resultado,
-    )
+    return Number.isFinite(resultado)
       ? resultado
       : 0
   }
@@ -183,8 +172,7 @@ function normalizarStatus(
     status === 'recebido' ||
     status === 'confirmado' ||
     status === 'em_preparo' ||
-    status ===
-      'saiu_para_entrega' ||
+    status === 'saiu_para_entrega' ||
     status === 'concluido' ||
     status === 'cancelado'
   ) {
@@ -194,17 +182,32 @@ function normalizarStatus(
   return 'recebido'
 }
 
+/*
+ * Mantém compatibilidade com:
+ *
+ * - resolucaoEstoque
+ * - stock_resolution
+ * - stock_restored
+ *
+ * Assim o dashboard consegue interpretar corretamente
+ * pedidos cancelados cuja devolução de estoque já foi feita.
+ */
 function normalizarResolucaoEstoque(
   valor: unknown,
+  estoqueRestaurado?: unknown,
 ): ResolucaoEstoque {
-  const resolucao =
-    texto(valor)
+  const resolucao = texto(valor)
 
-  if (
-    resolucao === 'devolvido' ||
-    resolucao === 'nao_devolver'
-  ) {
-    return resolucao
+  if (resolucao === 'devolvido') {
+    return 'devolvido'
+  }
+
+  if (resolucao === 'nao_devolver') {
+    return 'nao_devolver'
+  }
+
+  if (estoqueRestaurado === true) {
+    return 'devolvido'
   }
 
   return 'pendente'
@@ -220,47 +223,35 @@ function normalizarPedido(
   const item =
     valor &&
     typeof valor === 'object'
-      ? (valor as Record<
-          string,
-          unknown
-        >)
+      ? (valor as Record<string, unknown>)
       : {}
 
   const cliente =
     item.cliente &&
-    typeof item.cliente ===
-      'object'
-      ? (item.cliente as Record<
-          string,
-          unknown
-        >)
+    typeof item.cliente === 'object'
+      ? (item.cliente as Record<string, unknown>)
       : {}
 
   const numeroPedido =
-    texto(
-      item.numeroPedido,
-    ) ||
-    texto(
-      item.order_number,
-    ) ||
+    texto(item.numeroPedido) ||
+    texto(item.order_number) ||
     texto(item.numero) ||
     texto(item.id)
 
-  const status =
-    normalizarStatus(
-      item.status,
-    )
+  const status = normalizarStatus(
+    item.status,
+  )
 
   const resolucaoEstoque =
     normalizarResolucaoEstoque(
       item.resolucaoEstoque ??
         item.stock_resolution,
+      item.stock_restored,
     )
 
   const precisaAtencao =
     status === 'cancelado' &&
-    resolucaoEstoque ===
-      'pendente'
+    resolucaoEstoque === 'pendente'
 
   return {
     id:
@@ -274,33 +265,24 @@ function normalizarPedido(
     cliente: {
       nome:
         texto(cliente.nome) ||
-        texto(
-          item.customer_name,
-        ) ||
+        texto(item.customer_name) ||
         'Cliente não identificado',
 
       telefone:
-        texto(
-          cliente.telefone,
-        ) ||
-        texto(
-          item.customer_whatsapp,
-        ) ||
+        texto(cliente.telefone) ||
+        texto(item.customer_whatsapp) ||
         '',
     },
 
-    total:
-      converterNumero(
-        item.total ??
-          item.valorTotal ??
-          item.total_amount,
-      ),
+    total: converterNumero(
+      item.total ??
+        item.valorTotal ??
+        item.total_amount,
+    ),
 
     criadoEm:
       texto(item.criadoEm) ||
-      texto(
-        item.created_at,
-      ) ||
+      texto(item.created_at) ||
       new Date().toISOString(),
 
     precisaAtencao,
@@ -328,8 +310,7 @@ function formatarMoeda(
 function formatarData(
   valor: string,
 ): string {
-  const data =
-    new Date(valor)
+  const data = new Date(valor)
 
   if (
     Number.isNaN(
@@ -353,17 +334,14 @@ function formatarData(
 function formatarNumeroPedido(
   valor: string,
 ): string {
-  const numeroPedido =
-    texto(valor)
+  const numeroPedido = texto(valor)
 
   if (!numeroPedido) {
     return 'Pedido'
   }
 
   if (
-    numeroPedido.startsWith(
-      '#',
-    )
+    numeroPedido.startsWith('#')
   ) {
     return numeroPedido
   }
@@ -408,34 +386,29 @@ export default function AdminPage() {
   const [
     dashboard,
     setDashboard,
-  ] =
-    useState<DashboardApi | null>(
-      null,
-    )
+  ] = useState<DashboardApi | null>(
+    null,
+  )
 
   const [
     todosPedidos,
     setTodosPedidos,
-  ] =
-    useState<Pedido[]>([])
+  ] = useState<Pedido[]>([])
 
   const [
     carregando,
     setCarregando,
-  ] =
-    useState(true)
+  ] = useState(true)
 
   const [
     atualizando,
     setAtualizando,
-  ] =
-    useState(false)
+  ] = useState(false)
 
   const [
     erro,
     setErro,
-  ] =
-    useState('')
+  ] = useState('')
 
   /* =======================================================
      CARREGAR DADOS
@@ -458,34 +431,31 @@ export default function AdminPage() {
           const [
             respostaDashboard,
             respostaPedidos,
-          ] =
-            await Promise.all([
-              fetch(
-                '/api/admin/dashboard',
-                {
-                  method: 'GET',
-                  headers: {
-                    Accept:
-                      'application/json',
-                  },
-                  cache:
-                    'no-store',
+          ] = await Promise.all([
+            fetch(
+              '/api/admin/dashboard',
+              {
+                method: 'GET',
+                headers: {
+                  Accept:
+                    'application/json',
                 },
-              ),
+                cache: 'no-store',
+              },
+            ),
 
-              fetch(
-                '/api/admin/pedidos?limit=100',
-                {
-                  method: 'GET',
-                  headers: {
-                    Accept:
-                      'application/json',
-                  },
-                  cache:
-                    'no-store',
+            fetch(
+              '/api/admin/pedidos?limit=100',
+              {
+                method: 'GET',
+                headers: {
+                  Accept:
+                    'application/json',
                 },
-              ),
-            ])
+                cache: 'no-store',
+              },
+            ),
+          ])
 
           if (
             !respostaDashboard.ok
@@ -551,12 +521,8 @@ export default function AdminPage() {
            *
            * Junta as duas fontes pelo ID.
            */
-
           const mapa =
-            new Map<
-              string,
-              Pedido
-            >()
+            new Map<string, Pedido>()
 
           pedidosPrincipais.forEach(
             (pedido) => {
@@ -596,9 +562,7 @@ export default function AdminPage() {
           setTodosPedidos(
             pedidos,
           )
-        } catch (
-          error
-        ) {
+        } catch (error) {
           console.error(
             'Erro ao carregar dashboard:',
             error,
@@ -796,11 +760,15 @@ export default function AdminPage() {
       pendencias.estoque,
     )
 
+  /*
+   * Mantém os pedidos com estoque pendente
+   * separados dos pedidos aguardando ação.
+   *
+   * Evita esconder decisões diferentes em uma
+   * única métrica operacional.
+   */
   const totalAtencoes =
-    Math.max(
-      pedidosAtencao.length,
-      pendenciasEstoque,
-    )
+    pedidosAtencao.length
 
   const totalAcaoImediata =
     Math.max(

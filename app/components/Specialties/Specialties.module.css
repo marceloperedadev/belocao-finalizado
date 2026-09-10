@@ -1,7 +1,9 @@
 /* =========================================================
    SPECIALTIES — BELO CÃO
+
    ROXO VIVO + BRANCO
    EDITORIAL / LEVE / IDENTIDADE
+
    DESKTOP + MOBILE
    ========================================================= */
 
@@ -10,13 +12,16 @@
   --purple-dark: #4f2275;
   --purple-light: #8d55b4;
   --purple-pale: #f4eef7;
+
   --text: #302936;
   --muted: #77717b;
 
   position: relative;
   width: 100%;
   padding: 6.5rem 1.25rem 6rem;
+
   background: #ffffff;
+
   box-sizing: border-box;
   overflow: hidden;
   isolation: isolate;
@@ -28,13 +33,18 @@
 
 .specialties::before {
   content: '';
+
   position: absolute;
   z-index: -1;
+
   width: 360px;
   height: 360px;
+
   top: -190px;
   right: -160px;
+
   border-radius: 50%;
+
   background:
     radial-gradient(
       circle,
@@ -42,25 +52,42 @@
       rgba(103, 47, 150, 0.025) 42%,
       transparent 72%
     );
+
   pointer-events: none;
-  animation: backgroundFloat 14s ease-in-out infinite;
+
+  animation:
+    backgroundFloat
+    14s
+    ease-in-out
+    infinite;
 }
 
 .specialties::after {
   content: '';
+
   position: absolute;
   z-index: -1;
+
   width: 220px;
   height: 220px;
+
   left: -130px;
   bottom: 8%;
+
   border: 1px solid rgba(103, 47, 150, 0.08);
   border-radius: 50%;
+
   box-shadow:
     0 0 0 24px rgba(103, 47, 150, 0.018),
     0 0 0 48px rgba(103, 47, 150, 0.012);
+
   pointer-events: none;
-  animation: circleFloat 12s ease-in-out infinite;
+
+  animation:
+    circleFloat
+    12s
+    ease-in-out
+    infinite;
 }
 
 /* =========================================================
@@ -70,8 +97,11 @@
 .sectionIntro {
   width: 100%;
   max-width: 720px;
+
   margin: 0 auto 3.4rem;
+
   text-align: center;
+
   animation:
     introReveal
     0.8s
@@ -86,23 +116,32 @@
 .dentalEyebrow {
   display: inline-flex;
   align-items: center;
+
   gap: 0.6rem;
   margin-bottom: 1rem;
 
   color: var(--purple);
+
   font-size: 0.65rem;
   font-weight: 850;
   letter-spacing: 0.18em;
   line-height: 1.4;
+
   text-transform: uppercase;
 }
 
 .dentalEyebrow span {
   width: 24px;
   height: 3px;
+
+  flex: 0 0 auto;
+
   border-radius: 999px;
+
   background: var(--purple);
-  transition: width 0.4s ease;
+
+  transition:
+    width 0.4s ease;
 }
 
 .sectionIntro:hover .dentalEyebrow span {
@@ -115,26 +154,37 @@
 
 .sectionIntro h2 {
   margin: 0;
+
   color: #27222b;
-  font-size: clamp(2.8rem, 5.2vw, 4.7rem);
+
+  font-size: clamp(
+    2.8rem,
+    5.2vw,
+    4.7rem
+  );
+
   font-weight: 850;
   line-height: 0.94;
   letter-spacing: -0.055em;
+
   text-wrap: balance;
 }
 
 .sectionIntro h2 em {
   display: inline-block;
+
   margin-top: 0.12em;
   padding: 0.05em 0.15em 0.07em;
 
   color: #ffffff;
   background: var(--purple);
+
   border-radius: 0.12em;
 
   font-style: normal;
 
   transform: rotate(-1deg);
+
   transition:
     transform 0.35s ease,
     box-shadow 0.35s ease;
@@ -146,7 +196,8 @@
     translateY(-3px);
 
   box-shadow:
-    0 10px 25px rgba(103, 47, 150, 0.12);
+    0 10px 25px
+    rgba(103, 47, 150, 0.12);
 }
 
 /* =========================================================
@@ -155,11 +206,14 @@
 
 .sectionIntro p {
   max-width: 540px;
+
   margin: 1.45rem auto 0;
 
   color: var(--muted);
+
   font-size: 0.92rem;
   line-height: 1.65;
+
   text-wrap: pretty;
 }
 
@@ -169,11 +223,18 @@
 
 .specialtyGrid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
   gap: 1rem;
 
   width: 100%;
   max-width: 1180px;
+
   margin: 0 auto;
 }
 
@@ -192,6 +253,7 @@
   padding: 1.7rem;
 
   background: #f8f5fa;
+
   border: 1px solid #eee7f1;
   border-radius: 20px;
 
@@ -213,6 +275,7 @@
   content: '';
 
   position: absolute;
+
   width: 120px;
   height: 120px;
 
@@ -221,7 +284,8 @@
 
   border-radius: 50%;
 
-  background: rgba(103, 47, 150, 0.055);
+  background:
+    rgba(103, 47, 150, 0.055);
 
   pointer-events: none;
 
@@ -238,6 +302,7 @@
   content: '';
 
   position: absolute;
+
   top: 0;
   left: 0;
 
@@ -245,9 +310,12 @@
   height: 4px;
 
   background: var(--purple);
-  border-radius: 0 0 8px 0;
 
-  transition: width 0.35s ease;
+  border-radius:
+    0 0 8px 0;
+
+  transition:
+    width 0.35s ease;
 }
 
 /* =========================================================
@@ -256,13 +324,16 @@
 
 @media (hover: hover) and (pointer: fine) {
   .specialtyGrid article:hover {
-    transform: translateY(-5px);
+    transform:
+      translateY(-5px);
 
     background: #ffffff;
+
     border-color: #d9c8e2;
 
     box-shadow:
-      0 18px 40px rgba(103, 47, 150, 0.1);
+      0 18px 40px
+      rgba(103, 47, 150, 0.1);
   }
 
   .specialtyGrid article:hover::before {
@@ -270,7 +341,9 @@
   }
 
   .specialtyGrid article:hover::after {
-    transform: scale(1.35);
+    transform:
+      scale(1.35);
+
     opacity: 0.8;
   }
 }
@@ -281,6 +354,7 @@
 
 .specialtyNumber {
   position: absolute;
+
   top: 1.5rem;
   right: 1.5rem;
 
@@ -296,7 +370,9 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .specialtyGrid article:hover .specialtyNumber {
+  .specialtyGrid
+    article:hover
+    .specialtyNumber {
     color: var(--purple-light);
 
     transform:
@@ -323,6 +399,7 @@
   margin-bottom: 1.15rem;
 
   color: var(--purple);
+
   background: #ffffff;
 
   border: 1px solid #e5dbea;
@@ -336,16 +413,21 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .specialtyGrid article:hover .icon {
+  .specialtyGrid
+    article:hover
+    .icon {
     transform:
       rotate(-4deg)
       translateY(-2px);
 
     color: #ffffff;
-    background: var(--purple);
+
+    background:
+      var(--purple);
 
     box-shadow:
-      0 8px 18px rgba(103, 47, 150, 0.16);
+      0 8px 18px
+      rgba(103, 47, 150, 0.16);
   }
 }
 
@@ -377,9 +459,13 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .specialtyGrid article:hover h3 {
+  .specialtyGrid
+    article:hover
+    h3 {
     color: var(--purple);
-    transform: translateX(2px);
+
+    transform:
+      translateX(2px);
   }
 }
 
@@ -413,6 +499,7 @@
   align-items: center;
 
   gap: 0.4rem;
+
   width: fit-content;
 
   color: var(--purple);
@@ -422,6 +509,7 @@
   font-size: 0.66rem;
   font-weight: 850;
   letter-spacing: 0.07em;
+
   text-transform: uppercase;
 
   transition:
@@ -433,8 +521,11 @@
 @media (hover: hover) and (pointer: fine) {
   .specialtyGrid a:hover {
     gap: 0.7rem;
+
     color: var(--purple-dark);
-    transform: translateX(2px);
+
+    transform:
+      translateX(2px);
   }
 
   .specialtyGrid a:hover svg {
@@ -445,7 +536,8 @@
 }
 
 .specialtyGrid a svg {
-  transition: transform 0.25s ease;
+  transition:
+    transform 0.25s ease;
 }
 
 /* =========================================================
@@ -455,12 +547,16 @@
 @keyframes introReveal {
   from {
     opacity: 0;
-    transform: translateY(20px);
+
+    transform:
+      translateY(20px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+
+    transform:
+      translateY(0);
   }
 }
 
@@ -471,11 +567,21 @@
 @keyframes backgroundFloat {
   0%,
   100% {
-    transform: translate3d(0, 0, 0);
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      );
   }
 
   50% {
-    transform: translate3d(-15px, 18px, 0);
+    transform:
+      translate3d(
+        -15px,
+        18px,
+        0
+      );
   }
 }
 
@@ -483,13 +589,21 @@
   0%,
   100% {
     transform:
-      translate3d(0, 0, 0)
+      translate3d(
+        0,
+        0,
+        0
+      )
       rotate(0deg);
   }
 
   50% {
     transform:
-      translate3d(12px, -12px, 0)
+      translate3d(
+        12px,
+        -12px,
+        0
+      )
       rotate(5deg);
   }
 }
@@ -505,7 +619,11 @@
   }
 
   .specialtyGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
   }
 }
 
@@ -515,7 +633,10 @@
 
 @media (max-width: 680px) {
   .specialties {
-    padding: 4.5rem 0.85rem 4.2rem;
+    padding:
+      4.5rem
+      0.85rem
+      4.2rem;
   }
 
   .sectionIntro {
@@ -535,12 +656,19 @@
   }
 
   .sectionIntro h2 {
-    font-size: clamp(2.45rem, 12vw, 3.6rem);
+    font-size:
+      clamp(
+        2.45rem,
+        12vw,
+        3.6rem
+      );
+
     line-height: 0.95;
   }
 
   .sectionIntro p {
     margin-top: 1.25rem;
+
     font-size: 0.85rem;
     line-height: 1.6;
   }
@@ -556,6 +684,7 @@
 
   .specialtyGrid article {
     min-height: 0;
+
     padding: 1.35rem;
 
     border-radius: 18px;
@@ -569,6 +698,7 @@
   .specialtyGrid article::after {
     width: 105px;
     height: 105px;
+
     top: -65px;
     right: -60px;
   }
@@ -608,11 +738,13 @@
 
   .specialtyGrid h3 {
     margin-bottom: 0.5rem;
+
     font-size: 0.95rem;
   }
 
   .specialtyGrid p {
     margin-bottom: 0.9rem;
+
     font-size: 0.77rem;
     line-height: 1.55;
   }
@@ -628,7 +760,10 @@
 
 @media (max-width: 380px) {
   .specialties {
-    padding: 4rem 0.7rem 3.8rem;
+    padding:
+      4rem
+      0.7rem
+      3.8rem;
   }
 
   .sectionIntro {
@@ -649,12 +784,14 @@
 
   .specialtyGrid article {
     padding: 1.2rem;
+
     border-radius: 17px;
   }
 
   .specialtyGrid .icon {
     width: 38px;
     height: 38px;
+
     margin-bottom: 0.9rem;
   }
 
@@ -677,10 +814,18 @@
    ========================================================= */
 
 .specialtyGrid a:focus-visible {
-  outline: 3px solid rgba(103, 47, 150, 0.28);
+  outline:
+    3px solid
+    rgba(103, 47, 150, 0.28);
+
   outline-offset: 4px;
+
   border-radius: 5px;
 }
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
   .specialties *,
