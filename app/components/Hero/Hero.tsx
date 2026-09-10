@@ -150,7 +150,7 @@ export function Hero() {
             </a>
 
             <Link
-              href="/"
+              href="/Loja"
               className={styles.secondaryAction}
               aria-label="Visitar a lojinha do Belo Cão"
             >
