@@ -1,50 +1,113 @@
 /* =========================================================
-   BELO CÃO — SPECIALTIES
-   ROXO + BRANCO
-   EDITORIAL · CLEAN · RESPONSIVO
+   SPECIALTIES — BELO CÃO
+
+   ROXO VIVO + BRANCO
+   EDITORIAL / LEVE / IDENTIDADE
+   DESKTOP + MOBILE
    ========================================================= */
 
 .specialties {
+
+  --purple: #672f96;
+  --purple-dark: #4f2275;
+  --purple-light: #8d55b4;
+  --purple-pale: #f4eef7;
+
+  --text: #302936;
+  --muted: #77717b;
+
   position: relative;
+
   width: 100%;
-  box-sizing: border-box;
-  padding: 6.5rem 1.25rem 6rem;
-  overflow: hidden;
+
+  padding:
+    6.5rem
+    1.25rem
+    6rem;
+
   background: #ffffff;
-  color: var(--text, #342039);
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  isolation: isolate;
 }
 
 /* =========================================================
-   DECORAÇÃO
+   DETALHES DECORATIVOS DE FUNDO
+   BOLHAS DE SABÃO — DISCRETO + LEVE
    ========================================================= */
 
 .specialties::before {
-  content: "";
+  content: '';
+
   position: absolute;
-  top: -190px;
-  right: -160px;
+  z-index: -1;
+
   width: 360px;
   height: 360px;
-  border: 1px solid rgba(103, 47, 150, 0.07);
+
+  top: -190px;
+  right: -160px;
+
   border-radius: 50%;
-  box-shadow:
-    0 0 0 22px rgba(103, 47, 150, 0.018),
-    0 0 0 44px rgba(103, 47, 150, 0.012);
+
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(255, 255, 255, 0.32) 0 3%,
+      transparent 4%
+    ),
+    radial-gradient(
+      circle at 70% 65%,
+      rgba(110, 225, 225, 0.055) 0 18%,
+      transparent 48%
+    ),
+    radial-gradient(
+      circle at 30% 75%,
+      rgba(190, 130, 245, 0.06) 0 16%,
+      transparent 45%
+    );
+
+  border: 1px solid rgba(103, 47, 150, 0.055);
+
   pointer-events: none;
 }
 
+
 .specialties::after {
-  content: "";
+  content: '';
+
   position: absolute;
-  left: -130px;
-  bottom: 8%;
+  z-index: -1;
+
   width: 220px;
   height: 220px;
-  border: 1px solid rgba(103, 47, 150, 0.055);
+
+  left: -130px;
+  bottom: 8%;
+
   border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 28% 25%,
+      rgba(255, 255, 255, 0.4) 0 3%,
+      transparent 4%
+    ),
+    radial-gradient(
+      circle at 70% 70%,
+      rgba(130, 220, 220, 0.045) 0 20%,
+      transparent 50%
+    );
+
+  border: 1px solid rgba(103, 47, 150, 0.055);
+
   box-shadow:
-    0 0 0 18px rgba(103, 47, 150, 0.015),
-    0 0 0 36px rgba(103, 47, 150, 0.01);
+    0 0 0 18px rgba(103, 47, 150, 0.012),
+    0 0 0 36px rgba(103, 47, 150, 0.008);
+
   pointer-events: none;
 }
 
@@ -53,15 +116,31 @@
    ========================================================= */
 
 .sectionIntro {
-  position: relative;
-  z-index: 1;
+
   width: 100%;
+
   max-width: 720px;
-  margin: 0 auto 3.4rem;
-  box-sizing: border-box;
+
+  margin:
+    0
+    auto
+    3.4rem;
+
+  text-align: center;
+
+  animation:
+    introReveal
+    0.8s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    both;
 }
 
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
 .dentalEyebrow {
+
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
@@ -77,27 +156,26 @@
   white-space: nowrap;
 }
 
-/* ---------------------------------------------------------
-   IMPORTANTE:
-   O primeiro span é somente a linha.
-   O segundo span é o texto.
-   --------------------------------------------------------- */
+.dentalEyebrow span {
 
-.dentalEyebrow > span:first-child {
   width: 24px;
   height: 3px;
-  flex: 0 0 auto;
-  display: block;
+
+  flex:
+    0 0 auto;
+
   border-radius: 999px;
-  background: var(--purple, #672f96);
-  transition: width 0.4s ease;
+
+  background: var(--purple);
+
+  transition:
+    width 0.4s ease;
 }
 
-.dentalEyebrow > span:last-child {
-  width: auto;
-  height: auto;
-  flex: 0 1 auto;
-  display: inline;
+.sectionIntro:hover
+.dentalEyebrow span {
+
+  width: 23px;
 }
 
 /* =========================================================
@@ -105,35 +183,89 @@
    ========================================================= */
 
 .sectionIntro h2 {
-  width: 100%;
-  max-width: 100%;
+
   margin: 0;
-  color: var(--text, #342039);
-  font-size: clamp(2.8rem, 5vw, 4.7rem);
+
+  color: #27222b;
+
+  font-size:
+    clamp(
+      2.8rem,
+      5.2vw,
+      4.7rem
+    );
+
   font-weight: 850;
+
   line-height: 0.94;
+
   letter-spacing: -0.055em;
-  overflow-wrap: break-word;
+
+  text-wrap: balance;
 }
 
 .sectionIntro h2 em {
-  color: var(--purple, #672f96);
+
+  display: inline-block;
+
+  margin-top: 0.12em;
+
+  padding:
+    0.05em
+    0.15em
+    0.07em;
+
+  color: #ffffff;
+
+  background: var(--purple);
+
+  border-radius: 0.12em;
+
   font-style: normal;
+
+  transform: rotate(-1deg);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.sectionIntro:hover
+h2 em {
+
+  transform:
+    rotate(1deg)
+    translateY(-3px);
+
+  box-shadow:
+    0 10px 25px
+    rgba(103, 47, 150, 0.12);
 }
 
 /* =========================================================
-   TEXTO INTRODUTÓRIO
+   TEXTO
    ========================================================= */
 
 .sectionIntro p {
+
   width: 100%;
+
   max-width: 540px;
-  margin: 1.45rem 0 0;
-  color: var(--muted, #806f88);
+
+  margin:
+    1.45rem
+    auto
+    0;
+
+  color: var(--muted);
+
   font-size: 0.92rem;
-  font-weight: 450;
+
   line-height: 1.65;
-  overflow-wrap: break-word;
+
+  text-wrap: pretty;
+
+  box-sizing: border-box;
 }
 
 /* =========================================================
@@ -141,17 +273,23 @@
    ========================================================= */
 
 .specialtyGrid {
-  position: relative;
-  z-index: 1;
 
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 
-  width: 100%;
-  max-width: 1180px;
-  margin: 0 auto;
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
 
   gap: 1rem;
+
+  width: 100%;
+
+  max-width: 1180px;
+
+  margin: 0 auto;
+
   box-sizing: border-box;
 }
 
@@ -160,27 +298,123 @@
    ========================================================= */
 
 .specialtyGrid article {
+
   position: relative;
+
   min-width: 0;
+
   min-height: 245px;
 
   display: flex;
+
   flex-direction: column;
-  align-items: flex-start;
+
+  padding: 1.7rem;
+
+  background: #f8f5fa;
+
+  border:
+    1px solid
+    #eee7f1;
+
+  border-radius: 20px;
 
   box-sizing: border-box;
-  padding: 1.7rem;
 
   overflow: hidden;
 
-  background: #f8f5fa;
-  border: 1px solid #eee7f1;
-  border-radius: 20px;
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.35s ease;
+}
+
+/* =========================================================
+   BRILHO DISCRETO
+   ========================================================= */
+
+.specialtyGrid article::after {
+
+  content: '';
+
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  top: -75px;
+  right: -65px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(103, 47, 150, 0.055);
+
+  pointer-events: none;
 
   transition:
-    transform 0.35s ease,
-    border-color 0.35s ease,
-    box-shadow 0.35s ease;
+    transform 0.5s ease,
+    opacity 0.4s ease;
+}
+
+/* =========================================================
+   LINHA SUPERIOR
+   ========================================================= */
+
+.specialtyGrid article::before {
+
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 55px;
+  height: 4px;
+
+  background: var(--purple);
+
+  border-radius:
+    0 0 8px 0;
+
+  transition:
+    width 0.35s ease;
+}
+
+/* =========================================================
+   HOVER DOS CARDS
+   ========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .specialtyGrid article:hover {
+
+    transform:
+      translateY(-5px);
+
+    background: #ffffff;
+
+    border-color: #d9c8e2;
+
+    box-shadow:
+      0 18px 40px
+      rgba(103, 47, 150, 0.1);
+  }
+
+  .specialtyGrid article:hover::before {
+
+    width: 95px;
+  }
+
+  .specialtyGrid article:hover::after {
+
+    transform:
+      scale(1.35);
+
+    opacity: 0.8;
+  }
 }
 
 /* =========================================================
@@ -188,94 +422,182 @@
    ========================================================= */
 
 .specialtyNumber {
-  position: absolute;
-  z-index: 0;
 
-  top: 1.4rem;
+  position: absolute;
+
+  top: 1.5rem;
   right: 1.5rem;
 
-  color: rgba(103, 47, 150, 0.1);
+  color: #b4a9ba;
 
-  font-size: clamp(3.5rem, 6vw, 5.8rem);
-  font-weight: 900;
-  line-height: 0.8;
-  letter-spacing: -0.07em;
+  font-size: 0.65rem;
 
-  pointer-events: none;
-  user-select: none;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+  .specialtyGrid
+  article:hover
+  .specialtyNumber {
+
+    color:
+      var(--purple-light);
+
+    transform:
+      translateY(-2px)
+      rotate(-2deg);
+  }
 }
 
 /* =========================================================
    ÍCONE
    ========================================================= */
 
-.icon {
+.specialtyGrid .icon {
+
   position: relative;
+
   z-index: 2;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   width: 42px;
   height: 42px;
-  flex: 0 0 42px;
 
   margin-bottom: 1.15rem;
 
-  box-sizing: border-box;
+  flex:
+    0 0 auto;
 
-  color: var(--purple, #672f96);
+  color: var(--purple);
+
   background: #ffffff;
-  border: 1px solid #eee7f1;
-  border-radius: 12px;
 
-  box-shadow: 0 5px 16px rgba(103, 47, 150, 0.07);
+  border:
+    1px solid
+    #e5dbea;
+
+  border-radius: 13px;
+
+  transition:
+    transform 0.35s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+  .specialtyGrid
+  article:hover
+  .icon {
+
+    transform:
+      rotate(-4deg)
+      translateY(-2px);
+
+    color: #ffffff;
+
+    background:
+      var(--purple);
+
+    box-shadow:
+      0 8px 18px
+      rgba(103, 47, 150, 0.16);
+  }
+}
+
+.specialtyGrid .icon svg {
+
+  width: 18px;
+  height: 18px;
+
+  flex:
+    0 0 auto;
 }
 
 /* =========================================================
    TÍTULO DO CARD
    ========================================================= */
 
-.specialtyGrid article h3 {
+.specialtyGrid h3 {
+
   position: relative;
+
   z-index: 2;
 
-  width: 100%;
-  max-width: calc(100% - 1.5rem);
+  min-width: 0;
 
-  margin: 0;
+  margin:
+    0
+    0
+    0.55rem;
+
   padding-right: 2rem;
 
-  box-sizing: border-box;
-
-  color: var(--text, #342039);
+  color: var(--text);
 
   font-size: 1rem;
+
   font-weight: 800;
+
   line-height: 1.25;
-  letter-spacing: -0.02em;
 
   overflow-wrap: break-word;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+  .specialtyGrid
+  article:hover
+  h3 {
+
+    color:
+      var(--purple);
+
+    transform:
+      translateX(2px);
+  }
 }
 
 /* =========================================================
    DESCRIÇÃO
    ========================================================= */
 
-.specialtyGrid article p {
+.specialtyGrid p {
+
   position: relative;
+
   z-index: 2;
 
-  width: 100%;
-  max-width: 100%;
+  min-width: 0;
 
-  margin: 0.7rem 0 0;
+  flex-grow: 1;
 
-  color: var(--muted, #806f88);
+  margin:
+    0
+    0
+    1rem;
+
+  color: var(--muted);
 
   font-size: 0.78rem;
-  font-weight: 450;
+
   line-height: 1.55;
 
   overflow-wrap: break-word;
@@ -285,68 +607,147 @@
    LINK
    ========================================================= */
 
-.specialtyGrid article a {
+.specialtyGrid a {
+
   position: relative;
+
   z-index: 2;
 
   display: inline-flex;
+
   align-items: center;
+
   gap: 0.4rem;
 
   width: fit-content;
+
   max-width: 100%;
 
-  margin-top: auto;
-  padding-top: 1.25rem;
-
-  box-sizing: border-box;
-
-  color: var(--purple, #672f96);
-
-  font-size: 0.66rem;
-  font-weight: 850;
-  line-height: 1.2;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  color: var(--purple);
 
   text-decoration: none;
 
+  font-size: 0.66rem;
+
+  font-weight: 850;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+
   transition:
     gap 0.25s ease,
-    opacity 0.25s ease;
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
-.specialtyGrid article a span {
-  display: inline-block;
-  max-width: 100%;
-  overflow-wrap: break-word;
+@media (hover: hover) and (pointer: fine) {
+
+  .specialtyGrid
+  a:hover {
+
+    gap: 0.7rem;
+
+    color:
+      var(--purple-dark);
+
+    transform:
+      translateX(2px);
+  }
+
+  .specialtyGrid
+  a:hover
+  svg {
+
+    transform:
+      translateX(2px)
+      rotate(-3deg);
+  }
 }
 
-.specialtyGrid article a svg {
-  flex: 0 0 auto;
+.specialtyGrid a svg {
+
+  flex:
+    0 0 auto;
+
+  transition:
+    transform 0.25s ease;
 }
 
 /* =========================================================
-   HOVER
+   ANIMAÇÃO DA INTRO
    ========================================================= */
 
-@media (hover: hover) and (pointer: fine) {
-  .specialtyGrid article:hover {
-    transform: translateY(-4px);
-    border-color: rgba(103, 47, 150, 0.16);
-    box-shadow: 0 14px 35px rgba(103, 47, 150, 0.08);
+@keyframes introReveal {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(20px);
   }
 
-  .specialtyGrid article:hover a {
-    gap: 0.6rem;
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+/* =========================================================
+   ANIMAÇÃO DO FUNDO
+   ========================================================= */
+
+@keyframes backgroundFloat {
+
+  0%,
+  100% {
+
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      );
   }
 
-  .specialtyGrid article:hover .icon {
-    box-shadow: 0 7px 20px rgba(103, 47, 150, 0.11);
+  50% {
+
+    transform:
+      translate3d(
+        -15px,
+        18px,
+        0
+      );
+  }
+}
+
+@keyframes circleFloat {
+
+  0%,
+  100% {
+
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      )
+      rotate(0deg);
   }
 
-  .sectionIntro:hover .dentalEyebrow > span:first-child {
-    width: 27px;
+  50% {
+
+    transform:
+      translate3d(
+        12px,
+        -12px,
+        0
+      )
+      rotate(5deg);
   }
 }
 
@@ -355,25 +756,21 @@
    ========================================================= */
 
 @media (max-width: 950px) {
+
   .specialties {
-    padding: 5.5rem 1.1rem 5rem;
-  }
 
-  .sectionIntro {
-    margin-bottom: 2.8rem;
-  }
+    padding-top: 5.8rem;
 
-  .sectionIntro h2 {
-    font-size: clamp(2.7rem, 6.5vw, 4rem);
+    padding-bottom: 5.5rem;
   }
 
   .specialtyGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.9rem;
-  }
 
-  .specialtyGrid article {
-    min-height: 240px;
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
   }
 }
 
@@ -382,220 +779,377 @@
    ========================================================= */
 
 @media (max-width: 680px) {
+
   .specialties {
-    padding: 4.5rem 0.85rem 4.2rem;
+
+    padding:
+      4.5rem
+      0.85rem
+      4.2rem;
   }
 
+  /* =======================================================
+     INTRO
+     ======================================================= */
+
   .sectionIntro {
-    margin-bottom: 2.4rem;
+
+    width: 100%;
+
+    margin-bottom:
+      2.4rem;
   }
 
   .dentalEyebrow {
-    gap: 0.5rem;
-    margin-bottom: 0.9rem;
 
-    font-size: 0.58rem;
-    letter-spacing: 0.14em;
+    max-width: 100%;
+
+    margin-bottom:
+      0.9rem;
+
+    font-size:
+      0.58rem;
+
+    letter-spacing:
+      0.14em;
   }
 
-  .dentalEyebrow > span:first-child {
+  .dentalEyebrow span {
+
     width: 20px;
+
     height: 2px;
   }
 
   .sectionIntro h2 {
-    font-size: clamp(2.45rem, 12vw, 3.6rem);
+
+    max-width: 100%;
+
+    font-size:
+      clamp(
+        2.45rem,
+        12vw,
+        3.6rem
+      );
+
     line-height: 0.95;
-    letter-spacing: -0.05em;
   }
 
   .sectionIntro p {
-    max-width: 500px;
-    margin-top: 1.2rem;
 
-    font-size: 0.85rem;
-    line-height: 1.6;
+    max-width:
+      540px;
+
+    margin-top:
+      1.25rem;
+
+    padding:
+      0
+      0.15rem;
+
+    font-size:
+      0.85rem;
+
+    line-height:
+      1.6;
   }
+
+  /* =======================================================
+     GRID
+     ======================================================= */
 
   .specialtyGrid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.8rem;
+
+    grid-template-columns:
+      minmax(0, 1fr);
+
+    gap:
+      0.8rem;
+
+    width: 100%;
   }
+
+  /* =======================================================
+     CARDS MOBILE
+     ======================================================= */
 
   .specialtyGrid article {
+
+    width: 100%;
+
+    min-width: 0;
+
     min-height: 0;
-    padding: 1.35rem;
-    border-radius: 18px;
+
+    padding:
+      1.35rem;
+
+    border-radius:
+      18px;
   }
 
-  .specialtyNumber {
-    top: 1.25rem;
-    right: 1.35rem;
+  .specialtyGrid article::before {
 
-    font-size: clamp(3.3rem, 17vw, 5rem);
+    width: 42px;
+
+    height: 3px;
   }
 
-  .icon {
+  .specialtyGrid article::after {
+
+    width: 105px;
+    height: 105px;
+
+    top: -65px;
+    right: -60px;
+  }
+
+  /* =======================================================
+     ÍCONE
+     ======================================================= */
+
+  .specialtyGrid .icon {
+
     width: 40px;
     height: 40px;
-    flex-basis: 40px;
 
-    margin-bottom: 1rem;
-    border-radius: 11px;
+    margin-bottom:
+      1rem;
+
+    border-radius:
+      12px;
   }
 
-  .specialtyGrid article h3 {
-    max-width: calc(100% - 1rem);
-    padding-right: 1.5rem;
+  .specialtyGrid .icon svg {
 
-    font-size: 0.95rem;
+    width: 17px;
+    height: 17px;
   }
 
-  .specialtyGrid article p {
-    margin-top: 0.65rem;
+  /* =======================================================
+     NÚMERO
+     ======================================================= */
 
-    font-size: 0.77rem;
-    line-height: 1.55;
+  .specialtyNumber {
+
+    top:
+      1.35rem;
+
+    right:
+      1.35rem;
+
+    font-size:
+      0.61rem;
   }
 
-  .specialtyGrid article a {
-    padding-top: 1.15rem;
-    font-size: 0.64rem;
+  /* =======================================================
+     TEXTO
+     ======================================================= */
+
+  .specialtyGrid h3 {
+
+    margin-bottom:
+      0.5rem;
+
+    padding-right:
+      2rem;
+
+    font-size:
+      0.95rem;
+
+    line-height:
+      1.25;
   }
 
-  .specialties::before {
-    width: 280px;
-    height: 280px;
-    top: -155px;
-    right: -145px;
+  .specialtyGrid p {
+
+    margin-bottom:
+      0.9rem;
+
+    font-size:
+      0.77rem;
+
+    line-height:
+      1.55;
   }
 
-  .specialties::after {
-    width: 180px;
-    height: 180px;
-    left: -110px;
+  .specialtyGrid a {
+
+    font-size:
+      0.64rem;
   }
 }
 
 /* =========================================================
    MOBILE PEQUENO
-   Galaxy A / 375px / 360px
    ========================================================= */
 
 @media (max-width: 380px) {
+
   .specialties {
-    padding: 4rem 0.7rem 3.8rem;
+
+    padding:
+      4rem
+      0.7rem
+      3.8rem;
   }
 
   .sectionIntro {
-    margin-bottom: 2.1rem;
+
+    margin-bottom:
+      2.1rem;
   }
 
   .dentalEyebrow {
-    gap: 0.45rem;
-    margin-bottom: 0.8rem;
 
-    font-size: 0.55rem;
-    letter-spacing: 0.12em;
+    gap:
+      0.5rem;
+
+    margin-bottom:
+      0.85rem;
+
+    font-size:
+      0.55rem;
+
+    letter-spacing:
+      0.12em;
   }
 
-  .dentalEyebrow > span:first-child {
+  .dentalEyebrow span {
+
     width: 18px;
+
     height: 2px;
   }
 
   .sectionIntro h2 {
-    font-size: 2.35rem;
-    line-height: 0.96;
+
+    font-size:
+      2.35rem;
+
+    line-height:
+      0.95;
   }
 
   .sectionIntro p {
-    margin-top: 1.1rem;
-    font-size: 0.82rem;
-    line-height: 1.58;
+
+    padding:
+      0;
+
+    font-size:
+      0.82rem;
   }
 
   .specialtyGrid {
-    gap: 0.7rem;
+
+    gap:
+      0.7rem;
   }
 
   .specialtyGrid article {
-    padding: 1.2rem;
-    border-radius: 17px;
+
+    padding:
+      1.2rem;
+
+    border-radius:
+      17px;
+  }
+
+  .specialtyGrid .icon {
+
+    width: 38px;
+    height: 38px;
+
+    margin-bottom:
+      0.9rem;
+  }
+
+  .specialtyGrid h3 {
+
+    font-size:
+      0.9rem;
+  }
+
+  .specialtyGrid p {
+
+    font-size:
+      0.74rem;
   }
 
   .specialtyNumber {
-    top: 1.15rem;
-    right: 1.2rem;
-    font-size: 3.3rem;
-  }
 
-  .icon {
-    width: 38px;
-    height: 38px;
-    flex-basis: 38px;
+    top:
+      1.2rem;
 
-    margin-bottom: 0.9rem;
-    border-radius: 10px;
-  }
-
-  .specialtyGrid article h3 {
-    font-size: 0.9rem;
-  }
-
-  .specialtyGrid article p {
-    margin-top: 0.6rem;
-    font-size: 0.74rem;
-    line-height: 1.55;
-  }
-
-  .specialtyGrid article a {
-    padding-top: 1rem;
-    font-size: 0.61rem;
+    right:
+      1.2rem;
   }
 }
 
 /* =========================================================
-   TELAS MUITO ESTREITAS
+   CELULARES MUITO ESTREITOS
    ========================================================= */
 
 @media (max-width: 340px) {
-  .specialties {
-    padding-left: 0.6rem;
-    padding-right: 0.6rem;
-  }
 
-  .dentalEyebrow {
-    font-size: 0.52rem;
-    letter-spacing: 0.1em;
+  .specialties {
+
+    padding-left:
+      0.65rem;
+
+    padding-right:
+      0.65rem;
   }
 
   .sectionIntro h2 {
-    font-size: 2.15rem;
+
+    font-size:
+      2.15rem;
   }
 
-  .sectionIntro p {
-    font-size: 0.79rem;
+  .dentalEyebrow {
+
+    font-size:
+      0.52rem;
+
+    letter-spacing:
+      0.1em;
+  }
+
+  .dentalEyebrow span {
+
+    width:
+      16px;
   }
 
   .specialtyGrid article {
-    padding: 1.1rem;
+
+    padding:
+      1.1rem;
   }
 
-  .specialtyNumber {
-    right: 1rem;
-    font-size: 3rem;
+  .specialtyGrid h3 {
+
+    padding-right:
+      1.75rem;
   }
 }
 
 /* =========================================================
-   ACESSIBILIDADE — FOCO
+   ACESSIBILIDADE
    ========================================================= */
 
-.specialtyGrid article a:focus-visible {
-  outline: 2px solid var(--purple, #672f96);
-  outline-offset: 4px;
-  border-radius: 4px;
+.specialtyGrid a:focus-visible {
+
+  outline:
+    3px solid
+    rgba(103, 47, 150, 0.28);
+
+  outline-offset:
+    4px;
+
+  border-radius:
+    5px;
 }
 
 /* =========================================================
@@ -603,10 +1157,15 @@
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-  .specialtyGrid article,
-  .specialtyGrid article a,
-  .specialtyGrid article .icon,
-  .dentalEyebrow > span:first-child {
-    transition: none;
+
+  .specialties *,
+  .specialties::before,
+  .specialties::after {
+
+    animation:
+      none !important;
+
+    transition:
+      none !important;
   }
 }
