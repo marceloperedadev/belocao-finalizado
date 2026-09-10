@@ -1,0 +1,393 @@
+/* =========================================================
+   WHATSAPP FLOAT — BELO CÃO
+   ROXO + BRANCO + WHATSAPP
+   ATENDIMENTO / IDENTIDADE / DISCRETO
+   ========================================================= */
+
+.whatsappFloat {
+  position: fixed;
+
+  right: 24px;
+  bottom: 24px;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+
+  text-decoration: none;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================================
+   MENSAGEM
+   ========================================================= */
+
+.whatsappMessage {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+
+  min-height: 42px;
+
+  padding: 0 0.95rem;
+
+  color: #342039;
+  background: #ffffff;
+
+  border: 1px solid #eee7f1;
+  border-radius: 999px;
+
+  box-shadow:
+    0 10px 28px rgba(45, 18, 68, 0.13);
+
+  font-size: 0.68rem;
+  font-weight: 850;
+
+  letter-spacing: 0.025em;
+
+  white-space: nowrap;
+
+  opacity: 0;
+
+  transform: translateX(8px);
+
+  pointer-events: none;
+
+  animation:
+    messageEntrance
+    0.55s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    1.4s
+    forwards;
+}
+
+/* =========================================================
+   DETALHE ROXO DA MENSAGEM
+   ========================================================= */
+
+.whatsappMessage::before {
+  content: '';
+
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  background: #672f96;
+
+  border-radius: 50%;
+}
+
+/* =========================================================
+   BOTÃO
+   ========================================================= */
+
+.whatsappButton {
+  position: relative;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  color: #ffffff;
+  background: #25d366;
+
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+
+  box-shadow:
+    0 12px 28px rgba(45, 18, 68, 0.16),
+    0 5px 14px rgba(37, 211, 102, 0.2);
+
+  animation:
+    whatsappEntrance
+    0.7s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    both;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* =========================================================
+   PULSO
+   ========================================================= */
+
+.whatsappButton::before {
+  content: '';
+
+  position: absolute;
+
+  inset: -5px;
+
+  border: 2px solid rgba(37, 211, 102, 0.2);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  animation:
+    whatsappPulse
+    3.5s
+    ease-out
+    1.8s
+    infinite;
+}
+
+/* =========================================================
+   BRILHO
+   ========================================================= */
+
+.whatsappButton::after {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.24),
+      transparent 45%
+    );
+
+  opacity: 0.75;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease;
+}
+
+/* =========================================================
+   ÍCONE
+   ========================================================= */
+
+.whatsappIcon {
+  position: relative;
+  z-index: 2;
+
+  width: 25px;
+  height: 25px;
+
+  display: block;
+
+  transition:
+    transform 0.25s ease;
+}
+
+/* =========================================================
+   ENTRADA
+   ========================================================= */
+
+@keyframes whatsappEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes messageEntrance {
+  from {
+    opacity: 0;
+    transform: translateX(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* =========================================================
+   PULSO EXTERNO
+   ========================================================= */
+
+@keyframes whatsappPulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  25% {
+    opacity: 0.65;
+  }
+
+  70% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+}
+
+/* =========================================================
+   HOVER — DESKTOP
+   ========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+  .whatsappFloat:hover .whatsappButton {
+    background: #20bd5a;
+
+    transform:
+      translateY(-4px)
+      scale(1.07);
+
+    box-shadow:
+      0 16px 32px rgba(45, 18, 68, 0.18),
+      0 7px 20px rgba(37, 211, 102, 0.28);
+  }
+
+  .whatsappFloat:hover .whatsappButton::after {
+    opacity: 1;
+  }
+
+  .whatsappFloat:hover .whatsappIcon {
+    transform: scale(1.08);
+  }
+
+  .whatsappFloat:hover .whatsappMessage {
+    transform: translateX(-2px);
+  }
+}
+
+/* =========================================================
+   ACTIVE
+   ========================================================= */
+
+.whatsappFloat:active .whatsappButton {
+  transform:
+    translateY(-1px)
+    scale(0.94);
+}
+
+.whatsappFloat:active .whatsappIcon {
+  transform: scale(0.95);
+}
+
+/* =========================================================
+   FOCO
+   ========================================================= */
+
+.whatsappFloat:focus-visible {
+  outline: 3px solid #672f96;
+  outline-offset: 5px;
+
+  border-radius: 999px;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .whatsappFloat {
+    right: 18px;
+    bottom: 18px;
+  }
+
+  .whatsappButton {
+    width: 55px;
+    height: 55px;
+  }
+
+  .whatsappIcon {
+    width: 23px;
+    height: 23px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .whatsappFloat {
+    right: 15px;
+    bottom: 15px;
+  }
+
+  .whatsappMessage {
+    display: none;
+  }
+
+  .whatsappButton {
+    width: 53px;
+    height: 53px;
+
+    border-width: 2px;
+
+    box-shadow:
+      0 10px 24px rgba(45, 18, 68, 0.16),
+      0 4px 12px rgba(37, 211, 102, 0.18);
+  }
+
+  .whatsappIcon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* =========================================================
+   CELULARES PEQUENOS
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .whatsappFloat {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .whatsappButton {
+    width: 50px;
+    height: 50px;
+  }
+
+  .whatsappIcon {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+/* =========================================================
+   ACESSIBILIDADE
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsappButton,
+  .whatsappMessage,
+  .whatsappButton::before,
+  .whatsappButton::after,
+  .whatsappIcon {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .whatsappMessage {
+    opacity: 1;
+    transform: none;
+  }
+}

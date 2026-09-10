@@ -1,0 +1,936 @@
+/* =========================================================
+   CONTACT CTA — BELO CÃO
+   ROXO VIVO + BRANCO
+   ÚLTIMA PARADA
+   AJUSTE FINO — DESKTOP + MOBILE
+   ========================================================= */
+
+.contactCta {
+  position: relative;
+
+  width: 100%;
+  min-height: 590px;
+
+  padding: 6rem 1.5rem 4rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, 0.10),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 82% 75%,
+      rgba(255, 255, 255, 0.08),
+      transparent 30%
+    ),
+    #672f96;
+
+  overflow: hidden;
+  isolation: isolate;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FORMAS DECORATIVAS
+   ========================================================= */
+
+.shapeLarge {
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  right: -170px;
+  top: -190px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  pointer-events: none;
+
+  z-index: -2;
+
+  animation: shapeFloat 9s ease-in-out infinite;
+}
+
+
+.shapeSmall {
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  left: -70px;
+  bottom: 65px;
+
+  border-radius: 42% 58% 55% 45%;
+
+  background: #ffffff;
+
+  opacity: 0.08;
+
+  transform: rotate(18deg);
+
+  pointer-events: none;
+
+  z-index: -2;
+
+  animation: shapeRotate 12s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ANIMAÇÕES DAS FORMAS
+   ========================================================= */
+
+@keyframes shapeFloat {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate3d(-25px, 20px, 0)
+      scale(1.05);
+  }
+}
+
+
+@keyframes shapeRotate {
+  0%,
+  100% {
+    transform:
+      rotate(18deg)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      rotate(30deg)
+      scale(1.08);
+  }
+}
+
+
+/* =========================================================
+   PADRÃO DE PONTOS
+   ========================================================= */
+
+.dotPattern {
+  position: absolute;
+
+  width: 190px;
+  height: 130px;
+
+  left: 7%;
+  top: 18%;
+
+  background-image:
+    radial-gradient(
+      rgba(255, 255, 255, 0.45) 1.5px,
+      transparent 1.5px
+    );
+
+  background-size: 18px 18px;
+
+  opacity: 0.22;
+
+  pointer-events: none;
+
+  transform: rotate(-8deg);
+
+  z-index: -1;
+
+  animation: dotsMove 7s ease-in-out infinite;
+}
+
+
+@keyframes dotsMove {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(-8deg);
+  }
+
+  50% {
+    transform:
+      translate3d(0, -12px, 0)
+      rotate(-5deg);
+  }
+}
+
+
+/* =========================================================
+   LINHA SUPERIOR
+   ========================================================= */
+
+.contactCta::before {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: 110px;
+  height: 5px;
+
+  transform: translateX(-50%);
+
+  background: #ffffff;
+
+  border-radius: 0 0 8px 8px;
+
+  opacity: 0.95;
+
+  transition: width 0.4s ease;
+}
+
+
+.contactCta:hover::before {
+  width: 180px;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+
+.contactCta > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.eyebrow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.7rem;
+
+  margin-bottom: 1.25rem;
+
+  color: #ffffff;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+  animation: revealUp 0.8s ease both;
+}
+
+
+.eyebrowIcon {
+  width: 28px;
+  height: 28px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+  color: #672f96;
+}
+
+
+.eyebrowLine {
+  display: block;
+
+  width: 42px;
+  height: 2px;
+
+  flex-shrink: 0;
+
+  background: #ffffff;
+
+  border-radius: 10px;
+
+  opacity: 0.8;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.contactCta h2 {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      3.1rem,
+      7vw,
+      6.6rem
+    );
+
+  font-weight: 900;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.065em;
+
+  text-transform: uppercase;
+
+  animation: revealUp 0.9s 0.08s ease both;
+
+  transition: transform 0.4s ease;
+}
+
+
+.contactCta h2:hover {
+  transform: translateY(-4px);
+}
+
+
+/* =========================================================
+   PALAVRA DESTACADA
+   ========================================================= */
+
+.contactCta h2 span {
+  display: inline-block;
+
+  padding:
+    0.02em
+    0.12em
+    0.08em;
+
+  color: #672f96;
+
+  background: #ffffff;
+
+  border-radius: 0.08em;
+
+  transform: rotate(-1.5deg);
+
+  transition: transform 0.35s ease;
+}
+
+
+.contactCta h2:hover span {
+  transform:
+    rotate(1deg)
+    translateY(-3px);
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+   ========================================================= */
+
+.contactCta p {
+  max-width: 560px;
+
+  margin:
+    1.8rem auto
+    2.2rem;
+
+  color:
+    rgba(255, 255, 255, 0.88);
+
+  font-size: 1rem;
+
+  line-height: 1.65;
+
+  animation: revealUp 0.9s 0.16s ease both;
+}
+
+
+.contactCta p strong {
+  color: #ffffff;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   AÇÕES
+   ========================================================= */
+
+.actions {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  animation: revealUp 0.9s 0.24s ease both;
+}
+
+
+/* =========================================================
+   BOTÃO PRINCIPAL
+   ========================================================= */
+
+.primaryButton {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.9rem;
+
+  min-height: 60px;
+
+  padding:
+    0.5rem
+    0.6rem
+    0.5rem
+    1.55rem;
+
+  color: #672f96;
+
+  background: #ffffff;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 0.82rem;
+  font-weight: 900;
+
+  letter-spacing: 0.06em;
+
+  text-transform: uppercase;
+
+  box-shadow:
+    0 16px 35px
+    rgba(46, 18, 70, 0.20);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.primaryButton:hover {
+  transform:
+    translateY(-5px)
+    rotate(-1deg);
+
+  box-shadow:
+    0 22px 45px
+    rgba(46, 18, 70, 0.28);
+}
+
+
+.primaryButton:active {
+  transform:
+    translateY(-1px)
+    scale(0.98);
+}
+
+
+.primaryButton:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.65);
+  outline-offset: 5px;
+}
+
+
+/* =========================================================
+   ÍCONE DO BOTÃO
+   ========================================================= */
+
+.buttonIcon {
+  width: 44px;
+  height: 44px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background: #672f96;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.primaryButton:hover .buttonIcon {
+  transform:
+    rotate(8deg)
+    translate(2px, -2px);
+}
+
+
+/* =========================================================
+   INFORMAÇÕES
+   ========================================================= */
+
+.bottomInfo {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 1.25rem;
+
+  margin-top: 3rem;
+
+  color:
+    rgba(255, 255, 255, 0.88);
+
+  animation: revealUp 0.9s 0.32s ease both;
+}
+
+
+.infoItem {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.5rem;
+
+  font-size: 0.7rem;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+
+.infoItem svg {
+  flex-shrink: 0;
+}
+
+
+.infoDivider {
+  width: 1px;
+  height: 20px;
+
+  background:
+    rgba(255, 255, 255, 0.35);
+}
+
+
+/* =========================================================
+   ASSINATURA
+   ========================================================= */
+
+.signature {
+  position: absolute;
+
+  left: 50%;
+  bottom: 1.35rem;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.75rem;
+
+  white-space: nowrap;
+
+  color:
+    rgba(255, 255, 255, 0.52);
+
+  font-size: 0.6rem;
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+}
+
+
+.signature span {
+  color: #ffffff;
+}
+
+
+.signature small {
+  font-size: 0.56rem;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   ANIMAÇÃO DE ENTRADA
+   ========================================================= */
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .contactCta {
+    min-height: 570px;
+
+    padding:
+      5.5rem
+      1.5rem
+      3.75rem;
+  }
+
+
+  .contactCta h2 {
+    font-size:
+      clamp(
+        3rem,
+        9vw,
+        5.2rem
+      );
+  }
+
+
+  .dotPattern {
+    left: 3%;
+  }
+
+
+  .shapeLarge {
+    right: -230px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .contactCta {
+    min-height: 570px;
+
+    padding:
+      4.5rem
+      1rem
+      3.6rem;
+  }
+
+
+  .contactCta h2 {
+    width: 100%;
+    max-width: 100%;
+
+    font-size:
+      clamp(
+        2.6rem,
+        13.5vw,
+        4.2rem
+      );
+
+    line-height: 0.93;
+
+    letter-spacing: -0.06em;
+  }
+
+
+  .contactCta p {
+    width: 100%;
+    max-width: 410px;
+
+    margin:
+      1.6rem auto
+      2rem;
+
+    font-size: 0.93rem;
+
+    line-height: 1.6;
+  }
+
+
+  .eyebrow {
+    margin-bottom: 1.2rem;
+
+    gap: 0.55rem;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.11em;
+  }
+
+
+  .eyebrowIcon {
+    width: 26px;
+    height: 26px;
+  }
+
+
+  .eyebrowLine {
+    width: 28px;
+  }
+
+
+  .primaryButton {
+    width: min(100%, 350px);
+
+    min-height: 58px;
+
+    padding:
+      0.45rem
+      0.55rem
+      0.45rem
+      1.25rem;
+
+    font-size: 0.74rem;
+
+    gap: 0.7rem;
+  }
+
+
+  .buttonIcon {
+    width: 44px;
+    height: 44px;
+  }
+
+
+  .bottomInfo {
+    flex-direction: column;
+
+    gap: 0.7rem;
+
+    margin-top: 2.5rem;
+  }
+
+
+  .infoDivider {
+    width: 34px;
+    height: 1px;
+  }
+
+
+  .infoItem {
+    font-size: 0.63rem;
+
+    letter-spacing: 0.07em;
+  }
+
+
+  .signature {
+    bottom: 1rem;
+
+    flex-direction: column;
+
+    gap: 0.25rem;
+
+    font-size: 0.56rem;
+
+    letter-spacing: 0.14em;
+  }
+
+
+  .signature small {
+    font-size: 0.48rem;
+
+    letter-spacing: 0.1em;
+  }
+
+
+  .dotPattern {
+    width: 130px;
+    height: 100px;
+
+    left: -25px;
+    top: 12%;
+
+    background-size: 14px 14px;
+  }
+
+
+  .shapeLarge {
+    width: 330px;
+    height: 330px;
+
+    right: -180px;
+    top: -110px;
+  }
+
+
+  .shapeSmall {
+    width: 120px;
+    height: 120px;
+
+    left: -50px;
+    bottom: 100px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE PEQUENO
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .contactCta {
+    min-height: 550px;
+
+    padding:
+      4rem
+      0.85rem
+      3.3rem;
+  }
+
+
+  .contactCta h2 {
+    font-size: 2.35rem;
+
+    line-height: 0.94;
+  }
+
+
+  .contactCta p {
+    max-width: 330px;
+
+    margin:
+      1.45rem auto
+      1.8rem;
+
+    font-size: 0.86rem;
+  }
+
+
+  .eyebrow {
+    font-size: 0.56rem;
+  }
+
+
+  .eyebrowIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+
+  .primaryButton {
+    width: 100%;
+
+    font-size: 0.68rem;
+  }
+
+
+  .bottomInfo {
+    margin-top: 2.2rem;
+  }
+
+
+  .infoItem {
+    font-size: 0.58rem;
+  }
+
+
+  .signature {
+    bottom: 0.8rem;
+  }
+
+}
+
+
+/* =========================================================
+   TELAS MUITO BAIXAS
+   Evita que o conteúdo fique espremido verticalmente
+   ========================================================= */
+
+@media (max-height: 700px) and (max-width: 768px) {
+
+  .contactCta {
+    min-height: 530px;
+
+    padding-top: 3.5rem;
+    padding-bottom: 3rem;
+  }
+
+
+  .eyebrow {
+    margin-bottom: 1rem;
+  }
+
+
+  .contactCta p {
+    margin-top: 1.3rem;
+    margin-bottom: 1.6rem;
+  }
+
+
+  .bottomInfo {
+    margin-top: 2rem;
+  }
+
+
+  .signature {
+    bottom: 0.7rem;
+  }
+
+}
+
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .contactCta *,
+  .contactCta::before {
+    animation: none !important;
+
+    transition: none !important;
+  }
+
+}

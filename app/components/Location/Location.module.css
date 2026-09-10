@@ -1,0 +1,1162 @@
+/* =========================================================
+   LOCATION — BELO CÃO
+
+   ROXO VIVO + BRANCO
+   TRAILER / PET COFFEE / IDENTIDADE
+
+   PREMIUM · EDITORIAL · CONTEMPORÂNEO
+   ========================================================= */
+
+.locationSection {
+  position: relative;
+  width: 100%;
+
+  padding: 7rem 1.5rem 5.5rem;
+
+  background: #ffffff;
+  color: #24112f;
+
+  overflow: hidden;
+  isolation: isolate;
+  box-sizing: border-box;
+
+  scroll-margin-top: 100px;
+}
+
+
+/* =========================================================
+   DECORAÇÕES DE FUNDO
+   ========================================================= */
+
+.shapeOne {
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  left: -310px;
+  top: 18%;
+
+  border-radius: 50%;
+
+  background: #672f96;
+  opacity: 0.055;
+
+  pointer-events: none;
+  z-index: -1;
+}
+
+.shapeTwo {
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  right: -165px;
+  bottom: 9%;
+
+  border-radius: 43% 57% 54% 46%;
+
+  background: #672f96;
+  opacity: 0.065;
+
+  transform: rotate(14deg);
+
+  pointer-events: none;
+  z-index: -1;
+}
+
+
+/* =========================================================
+   PEQUENO DETALHE GRÁFICO
+   ========================================================= */
+
+.locationSection::before {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: 120px;
+  height: 3px;
+
+  transform: translateX(-50%);
+
+  background: #672f96;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.locationContainer {
+  position: relative;
+
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.sectionIntro {
+  position: relative;
+
+  width: 100%;
+  max-width: 780px;
+
+  margin: 0 auto 4rem;
+
+  text-align: center;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.65rem;
+
+  margin-bottom: 1.25rem;
+
+  color: #672f96;
+
+  font-size: 0.66rem;
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+  line-height: 1.4;
+
+  text-transform: uppercase;
+}
+
+.eyebrow span {
+  width: 28px;
+  height: 3px;
+
+  flex-shrink: 0;
+
+  border-radius: 999px;
+
+  background: #672f96;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.sectionIntro h2 {
+  margin: 0;
+
+  color: #24112f;
+
+  font-size: clamp(3rem, 6.5vw, 5.8rem);
+  font-weight: 900;
+
+  line-height: 0.92;
+  letter-spacing: -0.07em;
+
+  text-wrap: balance;
+}
+
+.sectionIntro h2 em {
+  display: inline-block;
+
+  margin-top: 0.1em;
+
+  padding:
+    0.02em
+    0.14em
+    0.08em;
+
+  color: #ffffff;
+
+  background: #672f96;
+
+  border-radius: 0.08em;
+
+  font-style: normal;
+
+  transform: rotate(-1.5deg);
+
+  transition:
+    transform 0.35s ease;
+}
+
+@media (hover: hover) {
+  .sectionIntro:hover h2 em {
+    transform:
+      rotate(1deg)
+      translateY(-3px);
+  }
+}
+
+
+/* =========================================================
+   TEXTO
+   ========================================================= */
+
+.sectionIntro p {
+  max-width: 570px;
+
+  margin: 1.7rem auto 0;
+
+  color: #706675;
+
+  font-size: 0.96rem;
+  line-height: 1.7;
+
+  text-wrap: pretty;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+
+.locationContent {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.82fr)
+    minmax(0, 1.18fr);
+
+  gap: 1.4rem;
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   CARD DE INFORMAÇÕES
+   ========================================================= */
+
+.locationInfo {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  padding: 2.2rem;
+
+  background: #672f96;
+
+  border-radius: 26px;
+
+  color: #ffffff;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+.locationInfo::before {
+  content: '';
+
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  right: -130px;
+  top: -120px;
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.locationInfo::after {
+  content: '';
+
+  position: absolute;
+
+  width: 90px;
+  height: 90px;
+
+  left: -50px;
+  bottom: 90px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TOPO DO CARD
+   ========================================================= */
+
+.infoTop {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 1.6rem;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.infoNumber {
+  font-size: 0.66rem;
+  font-weight: 900;
+
+  letter-spacing: 0.12em;
+
+  opacity: 0.65;
+}
+
+.infoLabel {
+  font-size: 0.63rem;
+  font-weight: 900;
+
+  letter-spacing: 0.17em;
+}
+
+
+/* =========================================================
+   LISTA
+   ========================================================= */
+
+.infoList {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  padding: 0;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 0.95rem;
+
+  padding: 1.15rem 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.infoItem:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   ÍCONE
+   ========================================================= */
+
+.iconBox {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  color: #672f96;
+  background: #ffffff;
+
+  border-radius: 13px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+@media (hover: hover) {
+  .infoItem:hover .iconBox {
+    transform: rotate(-5deg);
+  }
+}
+
+.iconBox svg {
+  width: 19px;
+  height: 19px;
+}
+
+
+/* =========================================================
+   TEXTOS
+   ========================================================= */
+
+.infoText {
+  min-width: 0;
+}
+
+.infoText strong {
+  display: block;
+
+  margin-bottom: 0.3rem;
+
+  color: #ffffff;
+
+  font-size: 0.83rem;
+  font-weight: 850;
+
+  line-height: 1.3;
+}
+
+.infoText p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.76);
+
+  font-size: 0.8rem;
+  line-height: 1.55;
+
+  text-wrap: pretty;
+}
+
+
+/* =========================================================
+   PET COFFEE
+   ========================================================= */
+
+.coffeeNote {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+
+  gap: 0.85rem;
+
+  margin-top: 0.85rem;
+
+  padding: 0.95rem;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  border-radius: 16px;
+}
+
+.coffeeIcon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  color: #672f96;
+
+  background: #ffffff;
+
+  border-radius: 11px;
+}
+
+.coffeeIcon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.coffeeNote strong {
+  display: block;
+
+  margin-bottom: 0.2rem;
+
+  font-size: 0.77rem;
+  font-weight: 850;
+
+  line-height: 1.3;
+}
+
+.coffeeNote p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 0.71rem;
+  line-height: 1.5;
+
+  text-wrap: pretty;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.locationCta {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  min-height: 58px;
+
+  margin-top: 1.15rem;
+
+  padding:
+    0
+    0.65rem
+    0
+    1.25rem;
+
+  color: #672f96;
+
+  background: #ffffff;
+
+  border-radius: 999px;
+
+  font-size: 0.71rem;
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+@media (hover: hover) {
+  .locationCta:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+      0 12px 30px rgba(40, 15, 55, 0.18);
+  }
+}
+
+.ctaIcon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  color: #ffffff;
+
+  background: #672f96;
+
+  border-radius: 50%;
+
+  transition:
+    transform 0.3s ease;
+}
+
+@media (hover: hover) {
+  .locationCta:hover .ctaIcon {
+    transform:
+      rotate(5deg)
+      translate(2px, -2px);
+  }
+}
+
+
+/* =========================================================
+   MAPA
+   ========================================================= */
+
+.locationMap {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  padding: 0.65rem;
+
+  background: #ffffff;
+
+  border: 2px solid #672f96;
+
+  border-radius: 26px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   TOPO DO MAPA
+   ========================================================= */
+
+.mapTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 52px;
+
+  padding: 0 0.65rem;
+
+  color: #672f96;
+}
+
+.mapTop > div {
+  display: flex;
+  align-items: center;
+
+  gap: 0.6rem;
+}
+
+.mapNumber {
+  font-size: 0.63rem;
+  font-weight: 900;
+
+  opacity: 0.55;
+}
+
+.mapTop strong {
+  font-size: 0.7rem;
+  font-weight: 900;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MOLDURA DO MAPA
+   ========================================================= */
+
+.mapFrame {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 500px;
+
+  overflow: hidden;
+
+  border-radius: 19px;
+
+  background: #eeeeee;
+}
+
+.mapFrame iframe {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 500px;
+
+  border: 0;
+
+  filter: grayscale(15%);
+
+  transition:
+    filter 0.4s ease;
+}
+
+@media (hover: hover) {
+  .locationMap:hover .mapFrame iframe {
+    filter: grayscale(0%);
+  }
+}
+
+
+/* =========================================================
+   BADGE DO MAPA
+   ========================================================= */
+
+.mapBadge {
+  position: absolute;
+
+  left: 1rem;
+  bottom: 1rem;
+
+  display: flex;
+  align-items: center;
+
+  gap: 0.45rem;
+
+  padding:
+    0.7rem
+    0.9rem;
+
+  color: #672f96;
+
+  background: #ffffff;
+
+  border-radius: 999px;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.12);
+
+  font-size: 0.61rem;
+  font-weight: 900;
+
+  letter-spacing: 0.1em;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
+.locationFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 0.5rem;
+
+  margin-top: 1.75rem;
+}
+
+.locationFooter span {
+  padding:
+    0.52rem
+    0.78rem;
+
+  color: #672f96;
+
+  background: #f5eff9;
+
+  border-radius: 999px;
+
+  font-size: 0.6rem;
+  font-weight: 850;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.locationFooter span:nth-child(2) {
+  color: #ffffff;
+  background: #672f96;
+}
+
+
+/* =========================================================
+   FOCO
+   ========================================================= */
+
+.locationCta:focus-visible {
+  outline: 3px solid #b997d0;
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+  .locationSection {
+    padding:
+      6rem
+      1rem
+      5rem;
+  }
+
+  .sectionIntro {
+    margin-bottom: 3.25rem;
+  }
+
+  .locationContent {
+    grid-template-columns: 1fr;
+
+    gap: 1.25rem;
+  }
+
+  .locationInfo {
+    padding: 2rem;
+  }
+
+  .mapFrame,
+  .mapFrame iframe {
+    min-height: 420px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .locationSection {
+    padding:
+      4.75rem
+      0.75rem
+      4.5rem;
+  }
+
+  .locationSection::before {
+    width: 80px;
+    height: 2px;
+  }
+
+  .sectionIntro {
+    margin-bottom: 2.6rem;
+  }
+
+  .eyebrow {
+    margin-bottom: 0.95rem;
+
+    font-size: 0.57rem;
+
+    letter-spacing: 0.13em;
+  }
+
+  .eyebrow span {
+    width: 20px;
+    height: 2px;
+  }
+
+  .sectionIntro h2 {
+    font-size: clamp(
+      2.6rem,
+      14vw,
+      4rem
+    );
+
+    line-height: 0.94;
+  }
+
+  .sectionIntro p {
+    max-width: 480px;
+
+    margin-top: 1.35rem;
+
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+
+  /* =======================================================
+     CONTEÚDO
+     ======================================================= */
+
+  .locationContent {
+    gap: 1rem;
+  }
+
+
+  /* =======================================================
+     INFORMAÇÕES
+     ======================================================= */
+
+  .locationInfo {
+    padding: 1.55rem;
+
+    border-radius: 22px;
+  }
+
+  .infoTop {
+    padding-bottom: 1.3rem;
+  }
+
+  .infoNumber {
+    font-size: 0.6rem;
+  }
+
+  .infoLabel {
+    font-size: 0.57rem;
+  }
+
+  .infoItem {
+    gap: 0.75rem;
+
+    padding:
+      1rem
+      0;
+  }
+
+  .iconBox {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 11px;
+  }
+
+  .iconBox svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .infoText strong {
+    font-size: 0.77rem;
+  }
+
+  .infoText p {
+    font-size: 0.74rem;
+    line-height: 1.5;
+  }
+
+
+  /* =======================================================
+     PET COFFEE
+     ======================================================= */
+
+  .coffeeNote {
+    gap: 0.75rem;
+
+    padding: 0.8rem;
+  }
+
+  .coffeeIcon {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 10px;
+  }
+
+  .coffeeIcon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .coffeeNote strong {
+    font-size: 0.74rem;
+  }
+
+  .coffeeNote p {
+    font-size: 0.67rem;
+    line-height: 1.45;
+  }
+
+
+  /* =======================================================
+     CTA
+     ======================================================= */
+
+  .locationCta {
+    min-height: 54px;
+
+    margin-top: 1rem;
+
+    padding-left: 1rem;
+
+    font-size: 0.64rem;
+
+    letter-spacing: 0.07em;
+  }
+
+  .ctaIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  /* =======================================================
+     MAPA
+     ======================================================= */
+
+  .locationMap {
+    padding: 0.5rem;
+
+    border-radius: 22px;
+  }
+
+  .mapTop {
+    min-height: 45px;
+
+    padding:
+      0
+      0.5rem;
+  }
+
+  .mapTop > div {
+    gap: 0.5rem;
+  }
+
+  .mapNumber {
+    font-size: 0.57rem;
+  }
+
+  .mapTop strong {
+    font-size: 0.64rem;
+  }
+
+  .mapFrame {
+    min-height: 300px;
+
+    border-radius: 16px;
+  }
+
+  .mapFrame iframe {
+    min-height: 300px;
+  }
+
+  .mapBadge {
+    left: 0.7rem;
+    bottom: 0.7rem;
+
+    padding:
+      0.58rem
+      0.72rem;
+
+    font-size: 0.53rem;
+  }
+
+
+  /* =======================================================
+     RODAPÉ DA SEÇÃO
+     ======================================================= */
+
+  .locationFooter {
+    gap: 0.4rem;
+
+    margin-top: 1.25rem;
+  }
+
+  .locationFooter span {
+    padding:
+      0.44rem
+      0.58rem;
+
+    font-size: 0.51rem;
+  }
+
+
+  /* =======================================================
+     FORMAS
+     ======================================================= */
+
+  .shapeOne {
+    width: 380px;
+    height: 380px;
+
+    left: -270px;
+  }
+
+  .shapeTwo {
+    width: 230px;
+    height: 230px;
+
+    right: -130px;
+  }
+}
+
+
+/* =========================================================
+   CELULARES PEQUENOS
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .locationSection {
+    padding:
+      4.35rem
+      0.6rem
+      4.25rem;
+  }
+
+  .locationInfo {
+    padding: 1.3rem;
+
+    border-radius: 20px;
+  }
+
+  .sectionIntro h2 {
+    font-size: 2.45rem;
+  }
+
+  .sectionIntro p {
+    font-size: 0.82rem;
+  }
+
+  .infoItem {
+    gap: 0.62rem;
+  }
+
+  .iconBox {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 10px;
+  }
+
+  .infoText strong {
+    font-size: 0.73rem;
+  }
+
+  .infoText p {
+    font-size: 0.69rem;
+  }
+
+  .coffeeNote {
+    gap: 0.65rem;
+  }
+
+  .coffeeIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .locationCta {
+    font-size: 0.6rem;
+  }
+
+  .mapFrame,
+  .mapFrame iframe {
+    min-height: 270px;
+  }
+
+  .mapBadge {
+    max-width: calc(100% - 1.4rem);
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .locationSection *,
+  .locationSection::before,
+  .locationSection::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
