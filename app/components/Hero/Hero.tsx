@@ -1,18 +1,23 @@
+
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import {
   ArrowDown,
   ArrowUpRight,
   Heart,
-  ShoppingBag,
   Sparkles,
 } from 'lucide-react'
 
 import styles from './Hero.module.css'
 
-export function Hero() {
+type HeroProps = {
+  onOpenSpace?: () => void
+}
+
+export function Hero({
+  onOpenSpace,
+}: HeroProps) {
   return (
     <section
       id="inicio"
@@ -129,6 +134,10 @@ export function Hero() {
               ================================================= */}
 
           <div className={styles.actions}>
+            {/* ===============================================
+                CTA PRINCIPAL
+                =============================================== */}
+
             <a
               href="#especialidades"
               className={styles.primaryButton}
@@ -149,19 +158,26 @@ export function Hero() {
               </span>
             </a>
 
-            <Link
-              href="/"
+            {/* ===============================================
+                CTA — CONHECER O ESPAÇO
+                =============================================== */}
+
+            <button
+              type="button"
               className={styles.secondaryAction}
-              aria-label="Visitar a lojinha do Belo Cão"
+              onClick={onOpenSpace}
+              aria-label="Conhecer o espaço do Belo Cão"
             >
-              <ShoppingBag
+              <ArrowUpRight
                 size={16}
                 strokeWidth={2}
                 aria-hidden="true"
               />
 
-              <span>conhecer a lojinha</span>
-            </Link>
+              <span>
+                conhecer o espaço
+              </span>
+            </button>
           </div>
         </div>
 

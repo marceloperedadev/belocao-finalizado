@@ -1,6 +1,5 @@
-
 import { Header } from './components/Header/Header'
-import { Hero } from './components/Hero/Hero'
+import { HeroWrapper } from './components/HeroWrapper/HeroWrapper'
 import { TrustStrip } from './components/TrustStrip/TrustStrip'
 import { Specialties } from './components/Specialties/Specialties'
 import { About } from './components/About/About'
@@ -13,41 +12,42 @@ import { Footer } from './components/Footer/Footer'
 import { WhatsAppFloat } from './components/WhatsAppFloat/WhatsAppFloat'
 
 export default function Home() {
-  return (
-    <div className="dental-site">
-      <Header />
+return ( <div className="dental-site"> <Header />
 
-      <main>
-        <Hero />
 
-        <TrustStrip />
+  <main>
+    <HeroWrapper />
 
-        <section id="especialidades">
-          <Specialties />
-        </section>
+    <TrustStrip />
 
-        <section id="sobre">
-          <About />
-        </section>
+    <section id="especialidades">
+      <Specialties />
+    </section>
 
-        <section id="experiencia">
-          <Experience />
-        </section>
+    <section id="sobre">
+      <About />
+    </section>
 
-        <Testimonial />
+    <section id="experiencia">
+      <Experience />
+    </section>
 
-        <Faq />
+    <Testimonial />
 
-        <section id="localizacao">
-          <Location />
-        </section>
+    <Faq />
 
-        <Contact />
+    <section id="localizacao">
+      <Location />
+    </section>
 
-        <WhatsAppFloat />
-      </main>
+    <Contact />
 
-      <Footer />
-    </div>
-  )
+    <WhatsAppFloat />
+  </main>
+
+  <Footer />
+</div>
+
+
+)
 }

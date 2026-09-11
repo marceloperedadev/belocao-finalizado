@@ -1,0 +1,590 @@
+/* =========================================================
+   BELO CÃO
+   ESPAÇO — VISUAL EDITORIAL / STICKY
+========================================================= */
+
+.section {
+  --purple: #672f96;
+  --purple-dark: #43205f;
+  --purple-light: #8d55b4;
+  --purple-pale: #eee5f4;
+  --white: #ffffff;
+  --text: #342039;
+  --muted: #806f88;
+
+  position: relative;
+  z-index: 20;
+  isolation: isolate;
+
+  background: var(--white);
+
+  padding: clamp(70px, 8vw, 130px) 5vw;
+
+  overflow: visible;
+}
+
+.shell {
+  width: min(1500px, 100%);
+  margin: 0 auto;
+
+  position: relative;
+  z-index: 1;
+}
+
+.stickyFrame {
+  position: relative;
+  z-index: 2;
+
+  isolation: isolate;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+  position: relative;
+  z-index: 5;
+
+  margin-bottom: clamp(35px, 5vw, 65px);
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 30px;
+
+  color: var(--purple);
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.number {
+  font-variant-numeric: tabular-nums;
+}
+
+.line {
+  width: 42px;
+  height: 1px;
+
+  background: currentColor;
+
+  opacity: 0.45;
+}
+
+.headerGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: clamp(35px, 8vw, 130px);
+
+  align-items: end;
+}
+
+.heading h2 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: clamp(52px, 8vw, 112px);
+  line-height: 0.86;
+  font-weight: 900;
+  letter-spacing: -0.065em;
+  text-transform: uppercase;
+}
+
+.heading h2 span {
+  color: var(--purple);
+}
+
+.intro {
+  max-width: 430px;
+
+  padding-bottom: 5px;
+}
+
+.intro p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: clamp(15px, 1.35vw, 18px);
+  line-height: 1.65;
+}
+
+.intro p strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 25px;
+
+  color: var(--purple);
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.textLinkIcon {
+  display: grid;
+  place-items: center;
+
+  width: 31px;
+  height: 31px;
+
+  border: 1px solid rgba(103, 47, 150, 0.25);
+  border-radius: 50%;
+
+  transition:
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.textLink:hover .textLinkIcon {
+  transform: translate(2px, -2px);
+  background: var(--purple-pale);
+}
+
+/* =========================================================
+   COMPOSIÇÃO
+========================================================= */
+
+.composition {
+  position: relative;
+  z-index: 3;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(240px, 0.55fr);
+  gap: clamp(12px, 1.5vw, 22px);
+
+  min-height: clamp(500px, 55vw, 700px);
+}
+
+/* =========================================================
+   FOTO PRINCIPAL
+========================================================= */
+
+.mainPhoto {
+  position: relative;
+
+  min-height: 520px;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(103, 47, 150, 0.18),
+      rgba(67, 32, 95, 0.08)
+    );
+}
+
+.image {
+  z-index: 0;
+
+  object-fit: cover;
+
+  transition: transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.mainPhoto:hover .image {
+  transform: scale(1.025);
+}
+
+.photoOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(52, 32, 57, 0.02) 45%,
+      rgba(52, 32, 57, 0.62) 100%
+    );
+
+  pointer-events: none;
+}
+
+.photoMeta {
+  position: absolute;
+  top: 22px;
+  left: 24px;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--white);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.photoMeta span:first-child {
+  display: grid;
+  place-items: center;
+
+  width: 29px;
+  height: 29px;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+}
+
+.photoCaption {
+  position: absolute;
+  left: 25px;
+  bottom: 24px;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: var(--white);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.photoCaption svg {
+  color: var(--white);
+}
+
+/* =========================================================
+   FOTOS LATERAIS
+========================================================= */
+
+.sidePhotos {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+
+  gap: clamp(12px, 1.5vw, 22px);
+}
+
+.secondaryPhoto {
+  position: relative;
+
+  min-height: 240px;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+
+  background: var(--purple-pale);
+}
+
+.photoPlaceholder {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 20px;
+
+  color: var(--purple);
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(141, 85, 180, 0.22),
+      transparent 38%
+    ),
+    linear-gradient(
+      145deg,
+      #f4edf8,
+      #e8dcef
+    );
+
+  text-align: center;
+}
+
+.photoPlaceholder svg {
+  opacity: 0.75;
+}
+
+.photoPlaceholder span {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.photoLabel {
+  position: absolute;
+  left: 18px;
+  bottom: 17px;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: var(--purple-dark);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.photoLabel span {
+  opacity: 0.55;
+}
+
+/* =========================================================
+   RODAPÉ DA SEÇÃO
+========================================================= */
+
+.bottom {
+  position: relative;
+  z-index: 5;
+
+  display: grid;
+  grid-template-columns: minmax(250px, 0.7fr) minmax(0, 1.3fr);
+  gap: 50px;
+
+  align-items: start;
+
+  margin-top: clamp(30px, 4vw, 55px);
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(52, 32, 57, 0.12);
+}
+
+.location {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  color: var(--purple);
+}
+
+.location > svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.location div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.location span {
+  color: var(--purple);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.location strong {
+  color: var(--text);
+
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 10px;
+  row-gap: 5px;
+}
+
+.feature > span {
+  grid-column: 1 / -1;
+
+  color: var(--purple);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.feature strong {
+  color: var(--text);
+
+  font-size: 14px;
+}
+
+.feature p {
+  grid-column: 2;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 900px) {
+  .headerGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .intro {
+    max-width: 620px;
+  }
+
+  .composition {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .mainPhoto {
+    min-height: min(70vw, 600px);
+  }
+
+  .sidePhotos {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+  }
+
+  .secondaryPhoto {
+    min-height: 250px;
+  }
+
+  .bottom {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding:
+      70px
+      20px
+      80px;
+
+    overflow: hidden;
+  }
+
+  .heading h2 {
+    font-size: clamp(48px, 14vw, 72px);
+  }
+
+  .composition {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mainPhoto {
+    min-height: 480px;
+
+    border-radius: 20px;
+  }
+
+  .sidePhotos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+  }
+
+  .secondaryPhoto {
+    min-height: 190px;
+
+    border-radius: 17px;
+  }
+
+  .bottom {
+    gap: 30px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .feature {
+    grid-template-columns: 30px 1fr;
+  }
+
+  .feature > span {
+    grid-column: 1;
+  }
+
+  .feature strong {
+    grid-column: 2;
+  }
+
+  .feature p {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 390px) {
+  .section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .mainPhoto {
+    min-height: 420px;
+  }
+
+  .sidePhotos {
+    grid-template-columns: 1fr;
+  }
+
+  .secondaryPhoto {
+    min-height: 180px;
+  }
+
+  .eyebrow {
+    gap: 8px;
+  }
+}
+
+/* =========================================================
+   ACESSIBILIDADE
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .image,
+  .textLinkIcon {
+    transition: none;
+  }
+
+  .mainPhoto:hover .image {
+    transform: none;
+  }
+}
