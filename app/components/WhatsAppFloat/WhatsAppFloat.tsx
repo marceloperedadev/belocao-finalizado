@@ -5,9 +5,13 @@ import { Config } from '@/app/constants/config'
 import styles from './WhatsAppFloat.module.css'
 
 export function WhatsAppFloat() {
+  const whatsappUrl = Config.WHATSAPP_URL
+    ? `${Config.WHATSAPP_URL}${Config.WHATSAPP_URL.includes('?') ? '&' : '?'}text=${encodeURIComponent('Olá! Quero conhecer o Belo Cão e agendar um atendimento.')}`
+    : '#contato'
+
   return (
     <a
-      href={Config.WHATSAPP_URL}
+      href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       className={styles.whatsappFloat}

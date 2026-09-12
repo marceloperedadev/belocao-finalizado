@@ -685,6 +685,8 @@
 
 .checkoutButton {
   width: 100%;
+
+  min-height: 58px;
   min-height: 55px;
 
   display: flex;

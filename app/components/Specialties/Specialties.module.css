@@ -611,6 +611,12 @@ h2 em {
 
   position: relative;
 
+  min-height: 40px;
+  padding: 0.65rem 0.8rem;
+  margin: -0.65rem -0.8rem;
+
+  border-radius: 9px;
+
   z-index: 2;
 
   display: inline-flex;

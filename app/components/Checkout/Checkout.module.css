@@ -1095,6 +1095,8 @@
 .shippingNotice {
   margin-top: 10px;
 
+  font-weight: 600;
+
   padding: 12px 14px;
 
   border: 1px solid rgba(103, 47, 150, 0.12);
@@ -1585,7 +1587,11 @@
     min-width: 0;
     width: 100%;
 
-    min-height: 51px;
+    min-height: 54px;
+    padding-left: 13px;
+    padding-right: 13px;
+
+    text-align: center;
   }
 }
 

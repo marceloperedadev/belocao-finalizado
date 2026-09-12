@@ -226,7 +226,13 @@ export function Specialties() {
                   aria-label={`Saber mais sobre ${item.title}`}
                 >
                   <span>
-                    saber mais
+                    {item.title === 'Lojinha'
+                      ? 'ver produtos'
+                      : item.title === 'Pet Coffee'
+                        ? 'conhecer o espaço'
+                        : item.title === 'Estética Animal'
+                          ? 'agendar atendimento'
+                          : 'falar sobre este serviço'}
                   </span>
 
                   <ArrowRight
