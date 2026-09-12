@@ -7,15 +7,17 @@
    ========================================================= */
 
 :root {
-  --background: #ffffff;
-  --foreground: #302936;
+  --background: #fcfbfd;
+  --foreground: #2d2533;
 
   --purple: #672f96;
   --purple-dark: #4f2275;
-  --purple-light: #8d55b4;
+  --purple-light: #9a69bd;
   --purple-pale: #f4eef7;
+  --ink-soft: #6f6476;
+  --surface: #ffffff;
 
-  --text: #302936;
+  --text: #2d2533;
   --muted: #817986;
 
   --border: #eee8f1;

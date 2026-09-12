@@ -128,6 +128,13 @@ export function Header() {
         >
           <span>Onde estamos</span>
         </a>
+
+        <a
+          href="/loja"
+          onClick={closeMenu}
+        >
+          <span>Lojinha</span>
+        </a>
       </nav>
 
       {/* =====================================================

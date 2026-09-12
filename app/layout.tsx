@@ -215,6 +215,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
+      className="bg-background"
       data-scroll-behavior="smooth"
     >
       <head>
