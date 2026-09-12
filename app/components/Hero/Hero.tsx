@@ -120,7 +120,7 @@ export function Hero({
               ================================================= */}
 
           <p className={styles.lead}>
-            Banho, tosa, cuidado e café.
+            Estética Animal, Pet Coffee e Lojinha em Taubaté.
 
             <strong>
               {' '}
@@ -139,12 +139,12 @@ export function Hero({
                 =============================================== */}
 
             <a
-              href="#especialidades"
+              href="#contato"
               className={styles.primaryButton}
-              aria-label="Conhecer as especialidades do Belo Cão"
+              aria-label="Agendar banho e tosa no Belo Cão"
             >
               <span>
-                conhecer o Belo Cão
+                agendar banho e tosa
               </span>
 
               <span

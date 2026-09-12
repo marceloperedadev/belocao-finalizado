@@ -17,9 +17,9 @@
   --muted: #806f88;
 
   position: relative;
-  min-height: calc(100svh - 82px);
-  margin-top: 80px;
-  padding: 30px 5vw 24px;
+  min-height: min(860px, calc(100svh - 74px));
+  margin-top: 74px;
+  padding: 38px 5vw 30px;
 
   display: flex;
   flex-direction: column;
@@ -61,8 +61,8 @@
 
   background: radial-gradient(
     circle at 35% 35%,
-    rgba(141, 85, 180, 0.22),
-    rgba(103, 47, 150, 0.08) 52%,
+    rgba(141, 85, 180, 0.16),
+    rgba(103, 47, 150, 0.055) 52%,
     rgba(103, 47, 150, 0) 72%
   );
 
@@ -302,7 +302,7 @@
 
 .lead {
   max-width: 570px;
-  margin: 32px 0 0;
+  margin: 28px 0 0;
 
   color: var(--muted);
 

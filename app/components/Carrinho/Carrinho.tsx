@@ -441,8 +441,7 @@ export default function Carrinho({
                 />
 
                 <span>
-                  Frete e forma de entrega
-                  definidos no checkout.
+                  Escolha entrega ou retirada e veja o frete no checkout.
                 </span>
               </div>
             </div>
@@ -454,9 +453,9 @@ export default function Carrinho({
               }
               onClick={onFinalizar}
             >
-              <span>
-                Finalizar pedido
-              </span>
+                <span>
+                  Continuar para entrega e pagamento
+                </span>
 
               <div
                 className={

@@ -29,11 +29,11 @@
 
   position: fixed;
   z-index: 1000;
-  top: 18px;
+  top: 16px;
   left: 50%;
 
-  width: min(calc(100% - 36px), 1320px);
-  min-height: 68px;
+  width: min(calc(100% - 40px), 1360px);
+  min-height: 64px;
 
   display: flex;
   align-items: center;
@@ -46,11 +46,11 @@
   background: rgba(255, 255, 255, 0.96);
 
   border: 1px solid rgba(103, 47, 150, 0.1);
-  border-radius: 20px;
+  border-radius: 16px;
 
   box-shadow:
-    0 14px 45px rgba(67, 32, 95, 0.1),
-    0 3px 10px rgba(103, 47, 150, 0.04);
+    0 12px 34px rgba(67, 32, 95, 0.08),
+    0 2px 8px rgba(103, 47, 150, 0.035);
 
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
