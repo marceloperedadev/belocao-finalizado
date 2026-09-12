@@ -139,7 +139,7 @@ export function Hero({
                 =============================================== */}
 
             <a
-              href="#especialidades"
+              href="#contato"
               className={styles.primaryButton}
               aria-label="Agendar banho e tosa no Belo Cão"
             >

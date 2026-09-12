@@ -161,10 +161,12 @@ export function Specialties() {
             const Icon =
               item.icon
 
-            const customLink =
-              getWhatsappLink(
-                item.title,
-              )
+    const customLink =
+      item.title === 'Lojinha'
+        ? '/loja'
+        : getWhatsappLink(
+            item.title,
+          )
 
             return (
               <article
@@ -221,8 +223,18 @@ export function Specialties() {
 
                 <a
                   href={customLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={
+                    item.title === 'Lojinha' ||
+                    !Config.WHATSAPP_URL
+                      ? undefined
+                      : '_blank'
+                  }
+                  rel={
+                    item.title === 'Lojinha' ||
+                    !Config.WHATSAPP_URL
+                      ? undefined
+                      : 'noopener noreferrer'
+                  }
                   aria-label={`Saber mais sobre ${item.title}`}
                 >
                   <span>
